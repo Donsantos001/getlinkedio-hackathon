@@ -1,13 +1,13 @@
 import HR from 'components/HR';
 import Navbar from 'sections/landing/Navbar';
 import styled from 'styled-components';
+import Header from 'sections/landing/Header';
+import Intro from 'sections/landing/Intro';
 import PurpleLens from '../assets/header-purple-lens-left.svg';
 import PurpleLens2 from '../assets/header-purple-lens-right.svg';
 import Metrix from '../assets/header-metrix.svg';
 import Star from '../assets/star.svg';
 import StarLight from '../assets/header-star-light.svg';
-import Header from 'sections/landing/Header';
-import Intro from 'sections/landing/Intro';
 
 const Landing = () => {
   return (
