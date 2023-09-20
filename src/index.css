@@ -1,0 +1,33 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Used only for colored theme */
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+  --warning-color: #e1ad01;
+  --default-textColor: #102a43;
+}
+
+.test {
+  color: #eff2f5
+}
+
+
+body {background-color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  color: white;
+}
+
+
+a {
+  text-decoration: none;
+  color: var(--default-textColor);
+}
