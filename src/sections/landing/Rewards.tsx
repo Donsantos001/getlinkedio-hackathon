@@ -32,7 +32,7 @@ const Rewards = () => {
 };
 
 const Wrapper = styled.div<{ bg: any }>`
-  padding: 40px 20px 70px 20px;
+  padding: 40px 30px 70px 30px;
   //   background-image: url(${({ bg }) => bg});
   //   background-size: cover;
   //   background-position: center;

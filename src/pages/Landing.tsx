@@ -14,6 +14,8 @@ import Faqs from 'sections/landing/Faqs';
 import Timeline from 'sections/landing/Timeline';
 import Rewards from 'sections/landing/Rewards';
 import Sponsors from 'sections/landing/Sponsors';
+import Policy from 'sections/landing/Policy';
+import Footer from 'sections/landing/Footer';
 
 const Landing = () => {
   return (
@@ -71,6 +73,12 @@ const Landing = () => {
         <Sponsors />
       </section>
       <HR />
+      <section>
+        <Policy />
+      </section>
+      <footer>
+        <Footer />
+      </footer>
     </PageWrapper>
   );
 };
