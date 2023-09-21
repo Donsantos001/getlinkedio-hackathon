@@ -12,8 +12,15 @@ const Header = () => {
   return (
     <Wrapper>
       <div className="header-theme">
-        <h3>Igniting a Revolution in HR Innovation</h3>
-        <img src={Arc} alt="" />
+        <div className="header-theme-text">
+          <h3>Igniting a Revolution in</h3>
+          <div className="httc">
+            <h3>HR Innovation </h3>
+            <div className="ht-image">
+              <img src={Arc} alt="" />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="header-main">
@@ -24,10 +31,15 @@ const Header = () => {
         <div className="header-content">
           <div className="header-title">
             <div className="hta">
-              <div className="bulb">
-                <img src={Bulb} alt="" />
+              <div className="htai">
+                <h2>getlinked </h2>
+                <div className="htaii">
+                  <h2>Tech</h2>
+                  <div className="bulb">
+                    <img src={Bulb} alt="" />
+                  </div>
+                </div>
               </div>
-              <h2>getlinked Tech</h2>
             </div>
             <div className="htb">
               <h2>
@@ -68,22 +80,75 @@ const Wrapper = styled.div`
   z-index: 9;
   padding-left: 30px;
 
+  @media (max-width: 1024px) {
+    padding-left: 15px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+
   .header-theme {
     padding: 10px 70px 10px 10px;
     margin: 10px 0 30px 0;
 
-    & > h3 {
+    @media (max-width: 768px) {
+      padding: 0;
+      margin: 10px 0 15px 0;
+    }
+
+    .header-theme-text {
       font-size: 36px;
       font-weight: bold;
       font-style: italic;
       color: ${({ theme }) => theme.text};
       width: fit-content;
+      text-align: right;
       margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (max-width: 1024px) {
+        font-size: 28px;
+      }
+
+      @media (max-width: 900px) {
+        font-size: 22px;
+      }
+      @media (max-width: 600px) {
+        font-size: 16px;
+        margin-right: auto;
+        justify-content: center;
+      }
+
+      & > h3 {
+        padding-right: 6px;
+      }
+
+      .httc {
+        position: relative;
+
+        .ht-image {
+          position: absolute;
+          top: calc(100% - 12px);
+          width: 100%;
+          display: flex;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
     }
 
     & > img {
       display: block;
       margin: -12px 0 0 auto;
+      @media (max-width: 600px) {
+        font-size: 18px;
+      }
     }
   }
 
@@ -91,8 +156,25 @@ const Wrapper = styled.div`
     display: flex;
     position: relative;
 
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+
     .header-content {
       padding: 80px 0 0 60px;
+
+      @media (max-width: 1024px) {
+        padding: 40px 0 0 60px;
+      }
+
+      @media (max-width: 900px) {
+        padding: 40px 0 0 40px;
+      }
+      @media (max-width: 768px) {
+        padding: 40px 0 0 0;
+        text-align: center;
+        margin: 0 auto;
+      }
 
       .header-title {
         color: ${({ theme }) => theme.text};
@@ -101,13 +183,57 @@ const Wrapper = styled.div`
         margin-bottom: 40px;
         font-family: 'Clash Display';
 
+        @media (max-width: 1024px) {
+          font-size: 40px;
+          margin-bottom: 30px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 20px;
+          margin-bottom: 20px;
+          line-height: 1;
+        }
+
         .hta {
           position: relative;
 
-          .bulb {
-            position: absolute;
-            bottom: 58%;
-            right: 138px;
+          .htai {
+            display: flex;
+
+            @media (max-width: 768px) {
+              justify-content: center;
+            }
+
+            & > h2 {
+              padding-right: 6px;
+            }
+
+            .htaii {
+              position: relative;
+
+              .bulb {
+                position: absolute;
+                bottom: 58%;
+                right: 26px;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                }
+
+                @media (max-width: 1024px) {
+                  right: 20px;
+                  width: 44px;
+                }
+
+                @media (max-width: 768px) {
+                  bottom: 64%;
+                  right: 10px;
+                  width: 20px;
+                }
+              }
+            }
           }
         }
 
@@ -115,8 +241,13 @@ const Wrapper = styled.div`
           display: flex;
           align-items: center;
 
+          @media (max-width: 768px) {
+            justify-content: center;
+          }
+
           h2 {
             margin: 0;
+            width: max-content;
           }
 
           & > h2 > span {
@@ -130,10 +261,16 @@ const Wrapper = styled.div`
 
           .chain {
             height: 86px;
+            @media (max-width: 768px) {
+              height: 48px;
+            }
           }
 
           .explode {
             height: 54px;
+            @media (max-width: 768px) {
+              height: 28px;
+            }
           }
         }
       }
@@ -144,10 +281,23 @@ const Wrapper = styled.div`
         margin-bottom: 40px;
         margin-left: 10px;
         max-width: 580px;
+
+        @media (max-width: 1024px) {
+          font-size: 20px;
+          margin-bottom: 30px;
+          max-width: 500px;
+        }
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
       }
 
       .header-button {
         margin-left: 10px;
+
+        @media (max-width: 768px) {
+          margin-left: 0;
+        }
       }
 
       .header-timer {
@@ -156,8 +306,23 @@ const Wrapper = styled.div`
         padding: 60px 0;
         margin-left: 10px;
 
+        @media (max-width: 1024px) {
+          padding: 40px 0;
+        }
+
+        @media (max-width: 768px) {
+          padding: 15px 0;
+          margin-left: 0;
+        }
+
         p {
           font-size: 56px;
+
+          @media (max-width: 768px) {
+            text-align: center;
+            font-size: 48px;
+          }
+
           span {
             font-size: 12px;
             margin-right: 35px;
@@ -171,6 +336,12 @@ const Wrapper = styled.div`
       width: 55%;
       right: 0;
       bottom: -40px;
+
+      @media (max-width: 768px) {
+        position: relative;
+        bottom: -9px;
+        width: 100%;
+      }
     }
   }
 `;

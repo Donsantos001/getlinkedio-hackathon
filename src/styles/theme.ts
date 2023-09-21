@@ -7,7 +7,7 @@ export const defaultTheme = {
   text: process.env.REACT_APP_TEXT || '#FFFFFF',
   backround: process.env.REACT_APP_BACKGROUND ||'#150E28',
   
-  gradientStart: process.env.REACT_APP_GRADIENT_START || '#903AFF',
-  gradientEnd: process.env.REACT_APP_GRADIENT_END || '#FE34B9',
+  gradientStart: process.env.REACT_APP_GRADIENT_START || '#FE34B9',
+  gradientEnd: process.env.REACT_APP_GRADIENT_END || '#903AFF',
 
 };

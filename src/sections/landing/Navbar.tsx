@@ -3,6 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../../assets/getlinkedlogo.png';
+import Menu from '../../assets/menu.svg';
+import BrandLogo from 'components/BrandLogo';
 
 const Navbar = () => {
   return (
@@ -10,24 +12,22 @@ const Navbar = () => {
       <div className="navbar">
         <div className="navbar-brand">
           <Link to={'/'} className="navbar-brand-item">
-            <div>
-              <img src={Logo} alt="getlinkedlogo" />
-            </div>
+            <BrandLogo />
           </Link>
         </div>
 
         <div className="navbar-options">
           <div className="navbar-items">
-            <Link to={'/'} className="navbar-item">
+            <Link to={'#timeline'} className="navbar-item">
               Timeline
             </Link>
-            <Link to={'/'} className="navbar-item">
+            <Link to={'#overview'} className="navbar-item">
               Overview
             </Link>
-            <Link to={'/'} className="navbar-item">
+            <Link to={'#faqs'} className="navbar-item">
               FAQs
             </Link>
-            <Link to={'/'} className="navbar-item">
+            <Link to={'/contact'} className="navbar-item">
               Contact
             </Link>
           </div>
@@ -36,6 +36,12 @@ const Navbar = () => {
             <Link to={'/register'} className="navbar-button">
               <GradButton label="Register" />
             </Link>
+          </div>
+        </div>
+
+        <div className="navbar-toggler">
+          <div className="nti">
+            <img src={Menu} alt="menu icon" />
           </div>
         </div>
       </div>
@@ -47,6 +53,14 @@ const Wrapper = styled.nav`
   position: relative;
   z-index: 10;
   padding: 40px 20px 10px 20px;
+
+  @media (max-width: 1200px) {
+    padding: 10px 20px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 10px 20px 5px 20px;
+  }
 
   .navbar {
     display: flex;
@@ -62,9 +76,8 @@ const Wrapper = styled.nav`
     .navbar-brand-item {
       padding-left: 60px;
 
-      & > div {
-        height: 44px;
-        object-fit: contain;
+      @media (max-width: 1200px) {
+        padding-left: 20px;
       }
     }
   }
@@ -72,6 +85,10 @@ const Wrapper = styled.nav`
   .navbar-options {
     display: flex;
     align-items: center;
+
+    @media (max-width: 900px) {
+      display: none;
+    }
 
     .navbar-items {
       display: flex;
@@ -81,11 +98,39 @@ const Wrapper = styled.nav`
         display: block;
         color: ${({ theme }) => theme.text};
         margin: 0 30px;
+
+        @media (max-width: 1200px) {
+          margin: 0 15px;
+        }
+      }
+    }
+
+    .navbar-buttons {
+      margin: 0 80px;
+
+      @media (max-width: 1200px) {
+        margin: 0 20px 0 40px;
       }
     }
   }
-  .navbar-buttons {
-    margin: 0 80px;
+
+  .navbar-toggler {
+    display: none;
+
+    @media (max-width: 900px) {
+      display: block;
+    }
+    .nti {
+      width: 25px;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 `;
 
