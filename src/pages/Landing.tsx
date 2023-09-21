@@ -11,6 +11,9 @@ import StarLight from '../assets/header-star-light.svg';
 import Rules from 'sections/landing/Rules';
 import Judge from 'sections/landing/Judge';
 import Faqs from 'sections/landing/Faqs';
+import Timeline from 'sections/landing/Timeline';
+import Rewards from 'sections/landing/Rewards';
+import Sponsors from 'sections/landing/Sponsors';
 
 const Landing = () => {
   return (
@@ -55,9 +58,19 @@ const Landing = () => {
       <section>
         <Faqs />
       </section>
+      <HR />
       <section>
-        <Faqs />
+        <Timeline />
       </section>
+      <HR />
+      <section>
+        <Rewards />
+      </section>
+      <HR />
+      <section>
+        <Sponsors />
+      </section>
+      <HR />
     </PageWrapper>
   );
 };
