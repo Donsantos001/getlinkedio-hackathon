@@ -1,39 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import BigIdea from '../../assets/big-idea.svg';
-import StarSmall from '../../assets/intro-star-small.svg';
-import StarMedium from '../../assets/intro-star-medium.svg';
-import Arrow from '../../assets/intro-arrow-curl.svg';
+import StarPurple from '../../assets/rules-star-puple.svg';
+import StarWhite from '../../assets/rules-star-white.svg';
+import RulesImage from '../../assets/rules-image.svg';
 
-const Intro = () => {
+const Rules = () => {
   return (
     <Wrapper>
-      <div className="intro">
-        <div className="intro-image">
-          <div className="star-small">
-            <img src={StarSmall} alt="" />
-          </div>
-          <div className="arrow">
-            <img src={Arrow} alt="" />
-          </div>
-          <div className="big-idea">
-            <img src={BigIdea} alt="" />
-          </div>
-        </div>
-
-        <div className="intro-content">
-          <div className="intro-title">
+      <div className="rules">
+        <div className="rules-content">
+          <div className="rules-title">
             <div className="ph"></div>
-            <div className="intro-title-text">
-              <h2 className="itt1">Introduction to getlinked</h2>
-              <h2 className="itt2">techHackathon 1.0</h2>
+            <div className="rules-title-text">
+              <h2 className="rtt1">Rules and</h2>
+              <h2 className="rtt2">Guidelines</h2>
             </div>
             <div className="star-medium">
-              <img src={StarMedium} alt="" />
+              <img src={StarWhite} alt="" />
             </div>
           </div>
 
-          <div className="intro-text">
+          <div className="rules-text">
             <p>
               Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape
               the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have
@@ -43,13 +30,23 @@ const Intro = () => {
             </p>
           </div>
         </div>
+
+        <div className="rules-image">
+          <div className="star-small">
+            <img src={StarPurple} alt="" />
+          </div>
+
+          <div className="ric">
+            <img src={RulesImage} alt="" />
+          </div>
+        </div>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  padding: 40px 80px;
+  padding: 0 80px;
 
   @media (max-width: 900px) {
     padding: 20px 40px;
@@ -58,34 +55,32 @@ const Wrapper = styled.div`
     padding: 10px 20px;
   }
 
-  .intro {
+  .rules {
     padding: 30px 0 20px 0;
     display: flex;
     justify-content: center;
     align-items: center;
 
     @media (max-width: 768px) {
-      flex-direction: column;
+      flex-direction: column-reverse;
       padding: 10px 0;
     }
 
-    .intro-image {
+    .rules-image {
       position: relative;
       width: 490px;
-      margin-right: 6%;
       display: flex;
       flex-direction: column;
+      margin-left: 6px;
 
       @media (max-width: 900px) {
         flex-direction: column-reverse;
         align-items: center;
-        margin-bottom: 20px;
-        margin-right: 0;
         width: auto;
         padding: 5px;
       }
 
-      .big-idea {
+      .ric {
         width: 100%;
         height: 100%;
 
@@ -119,18 +114,10 @@ const Wrapper = styled.div`
         }
       }
 
-      .arrow {
-        position: absolute;
-        left: calc(100% - 38px);
-        bottom: 0;
-
-        @media (max-width: 900px) {
-          position: static;
-        }
-      }
+      
     }
 
-    .intro-content {
+    .rules-content {
       max-width: 530px;
       color: ${({ theme }) => theme.text};
 
@@ -138,17 +125,16 @@ const Wrapper = styled.div`
         text-align: center;
       }
 
-      .intro-title {
+      .rules-title {
         position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         @media (max-width: 900px){
-          padding-left: 15px;
-        }
+            padding-left: 15px;
+          }
 
-        .intro-title-text {
+        .rules-title-text {
           font-family: 'Clash Display';
           font-size: 22px;
           margin-bottom: 20px;
@@ -160,7 +146,7 @@ const Wrapper = styled.div`
           & > h2 {
             line-height: 1.1;
           }
-          .itt2 {
+          .rtt2 {
             color: ${({ theme }) => theme.primary};
           }
         }
@@ -177,24 +163,25 @@ const Wrapper = styled.div`
             object-fit: contain;
           }
         }
+
         .ph {
-          display: none;
+            display: none;
 
-          @media(max-width: 900px){
-              display: block;
-          }
-      }
+            @media(max-width: 900px){
+                display: block;
+            }
+        }
       }
 
-      .intro-text {
+      .rules-text {
         font-size: 14px;
 
         @media (max-width: 768px) {
-          font-size: 13px;
-        }
+            font-size: 13px;
+          }
       }
     }
   }
 `;
 
-export default Intro;
+export default Rules;

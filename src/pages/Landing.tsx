@@ -8,6 +8,9 @@ import PurpleLens2 from '../assets/header-purple-lens-right.svg';
 import Metrix from '../assets/header-metrix.svg';
 import Star from '../assets/star.svg';
 import StarLight from '../assets/header-star-light.svg';
+import Rules from 'sections/landing/Rules';
+import Judge from 'sections/landing/Judge';
+import Faqs from 'sections/landing/Faqs';
 
 const Landing = () => {
   return (
@@ -41,6 +44,20 @@ const Landing = () => {
         <Intro />
       </section>
       <HR />
+      <section>
+        <Rules />
+      </section>
+      <HR />
+      <section>
+        <Judge />
+      </section>
+      <HR />
+      <section>
+        <Faqs />
+      </section>
+      <section>
+        <Faqs />
+      </section>
     </PageWrapper>
   );
 };
