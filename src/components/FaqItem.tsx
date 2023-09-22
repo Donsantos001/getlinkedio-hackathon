@@ -17,11 +17,9 @@ const FaqItem = ({
   return (
     <Container open={open}>
       <div className="faq-item">
-        <div className="ques-con">
+        <div className="ques-con" onClick={() => toggleShow(id)}>
           <p className="ques">{ques}</p>
-          <div className="plus" onClick={() => toggleShow(id)}>
-            +
-          </div>
+          <div className="plus">+</div>
         </div>
         <div className={`ans-con${open ? ' open' : ''}`}>
           <p className="ans">{ans}</p>
@@ -39,6 +37,7 @@ const Container = styled.div<{ open: boolean }>`
     text-align: left;
 
     .ques-con {
+      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -49,7 +48,6 @@ const Container = styled.div<{ open: boolean }>`
 
       .plus {
         font-weight: 500;
-        cursor: pointer;
         font-size: 1.5em;
         color: ${({ theme }) => theme.primary};
       }

@@ -7,7 +7,7 @@ import Arrow from '../../assets/intro-arrow-curl.svg';
 
 const Intro = () => {
   return (
-    <Wrapper>
+    <Wrapper id="overview">
       <div className="intro">
         <div className="intro-image">
           <div className="star-small">

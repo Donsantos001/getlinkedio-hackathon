@@ -19,6 +19,10 @@
 }
 
 
+html,a {
+  scroll-behavior: smooth;
+}
+
 body {background-color: #150E28;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;

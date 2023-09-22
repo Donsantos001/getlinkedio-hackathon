@@ -173,6 +173,9 @@ const Wrapper = styled.div`
     @media (max-width: 1024px) {
       padding: 20px 30px 40px 30px;
     }
+    @media (max-width: 600px) {
+      padding: 20px 10px 40px 10px;
+    }
 
     .register-inner {
       display: flex;

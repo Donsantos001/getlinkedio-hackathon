@@ -1,12 +1,19 @@
 import GradButton from 'components/GradButton';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../../assets/getlinkedlogo.png';
 import Menu from '../../assets/menu.svg';
 import BrandLogo from 'components/BrandLogo';
+import NavbarMobile from './NavbarMobile';
 
 const Navbar = () => {
+  const [openNav, setOpenNav] = useState(false);
+  
+  const toggleNav = () => {
+    setOpenNav(!openNav);
+  }
+
   return (
     <Wrapper>
       <div className="navbar">
@@ -18,15 +25,15 @@ const Navbar = () => {
 
         <div className="navbar-options">
           <div className="navbar-items">
-            <Link to={'#timeline'} className="navbar-item">
+            <a href={'#timeline'} className="navbar-item">
               Timeline
-            </Link>
-            <Link to={'#overview'} className="navbar-item">
+            </a>
+            <a href={'#overview'} className="navbar-item">
               Overview
-            </Link>
-            <Link to={'#faqs'} className="navbar-item">
+            </a>
+            <a href={'#faqs'} className="navbar-item">
               FAQs
-            </Link>
+            </a>
             <Link to={'/contact'} className="navbar-item">
               Contact
             </Link>
@@ -39,11 +46,15 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="navbar-toggler">
+        <div className="navbar-toggler" onClick={toggleNav}>
           <div className="nti">
             <img src={Menu} alt="menu icon" />
           </div>
         </div>
+      </div>
+
+      <div className="nav-mob-con">
+        <NavbarMobile open={openNav} close={() => {setOpenNav(false)}}/>
       </div>
     </Wrapper>
   );
@@ -115,6 +126,7 @@ const Wrapper = styled.nav`
   }
 
   .navbar-toggler {
+    cursor: pointer;
     display: none;
 
     @media (max-width: 900px) {
@@ -130,6 +142,14 @@ const Wrapper = styled.nav`
         height: 100%;
         object-fit: contain;
       }
+    }
+  }
+
+  .nav-mob-con {
+    display: none;
+
+    @media (max-width: 900px) {
+      display: block;
     }
   }
 `;

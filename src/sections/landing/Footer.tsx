@@ -33,13 +33,13 @@ const Footer = () => {
             <div className="links">
               <h4>Useful Links</h4>
               <p>
-                <Link to="#overview">Overview</Link>
+                <a href="#overview">Overview</a>
               </p>
               <p>
-                <Link to="#timeline">Timeline</Link>
+                <a href="#timeline">Timeline</a>
               </p>
               <p>
-                <Link to="#faqs">FAQs</Link>
+                <a href="#faqs">FAQs</a>
               </p>
               <p>
                 <Link to="/register">Register</Link>

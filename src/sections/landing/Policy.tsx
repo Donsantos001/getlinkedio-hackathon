@@ -235,6 +235,7 @@ const Wrapper = styled.div`
       }
 
       .policy-box-con {
+        background-color: rgba(217,217,217,0.03);
         border: 1px solid ${({ theme }) => theme.primary};
         border-radius: 4px;
 
@@ -274,6 +275,14 @@ const Wrapper = styled.div`
 
                       .check {
                         padding-top: 5px;
+                        display: flex;
+                        align-items: flex-start;
+
+                        img {
+                            width: 14px;
+                            height: 14px;
+                            object-fit: contain;
+                          }
                       }
 
                       .text{

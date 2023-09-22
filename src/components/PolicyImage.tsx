@@ -17,8 +17,7 @@ const PolicyImage = () => {
 };
 
 const Container = styled.div`
-    position relative;
-    margin-bottom: 40%;
+    position: relative;
 
     .lock {
       width: 100%;

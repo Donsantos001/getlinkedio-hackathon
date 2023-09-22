@@ -195,17 +195,22 @@ const PageWrapper = styled.div`
       left: 0;
       transform: translate(0%, -30%);
       opacity: 0.68;
+      @media (max-width: 768px) {
+        width: 80%;
+      }
     }
     .lighting-right {
       width: 70%;
       position: absolute;
       bottom: 0;
       right: 0;
-      transform: translate(40%, 40%);
+      transform: translate(50%, 40%);
       opacity: 0.68;
 
       @media (max-width: 768px) {
-        transform: translate(40%, 60%);
+        width: 80%;
+        bottom: 50%;
+        transform: translate(50%, 60%);
       }
     }
   }
@@ -234,6 +239,7 @@ const PageWrapper = styled.div`
       opacity: 0.68;
 
       @media (max-width: 768px) {
+        width: 80%;
         transform: translate(60%, 0%);
       }
     }
@@ -255,10 +261,9 @@ const PageWrapper = styled.div`
       opacity: 0.68;
 
       @media (max-width: 768px) {
-        top: 0;
-        right: 100%;
-        left: auto;
-        transform: translate(0%, -30%);
+        width: 90%;
+        top: 10%;
+        // transform: translate(0%, 0%);
       }
     }
     .lighting-right {
@@ -266,12 +271,14 @@ const PageWrapper = styled.div`
       position: absolute;
       bottom: -20%;
       right: 0;
-      transform: translateX(70%);
+      transform: translateX(60%);
       opacity: 0.68;
+
       @media (max-width: 768px) {
+        width: 90%;
         bottom: auto;
         top: 100%;
-        transform: translate(20%, -70%);
+        transform: translate(50%, -100%);
       }
     }
   }
@@ -291,7 +298,8 @@ const PageWrapper = styled.div`
       transform: translate(-30%, -30%);
       opacity: 0.68;
       @media (max-width: 768px) {
-        transform: translate(-80%, -50%);
+        width: 80%;
+        transform: translate(-30%, -20%);
       }
     }
     .lighting-right {
@@ -299,11 +307,12 @@ const PageWrapper = styled.div`
       position: absolute;
       bottom: 0;
       right: 0;
-      transform: translate(40%, 40%);
+      transform: translate(40%, 30%);
       opacity: 0.68;
 
       @media (max-width: 768px) {
-        transform: translate(40%, 50%);
+        width: 80%;
+        transform: translate(50%, 50%);
       }
     }
   }
@@ -318,14 +327,15 @@ const PageWrapper = styled.div`
     .lighting-left {
       width: 70%;
       position: absolute;
-      bottom: 0;
+      top: 100%;
       left: 0;
       opacity: 0.68;
-      transform: translate(-20%, 25%);
+      transform: translate(-30%, -70%);
 
       @media (max-width: 768px) {
-        bottom: 0;
-        transform: translate(-35%, 50%);
+        width: 80%;
+        top: 50%;
+        transform: translate(-30%, -50%);
       }
     }
   }

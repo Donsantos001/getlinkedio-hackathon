@@ -66,7 +66,7 @@ const Header = () => {
 
           <div className="header-timer">
             <p>
-              00<span>H </span>00<span>M </span>00<span id='ss'>S</span>
+              00<span>H </span>00<span>M </span>00<span id="ss">S</span>
             </p>
           </div>
         </div>
@@ -328,7 +328,7 @@ const Wrapper = styled.div`
           }
 
           span {
-            font-size: 12px;
+            font-size: 14px;
             margin-right: 35px;
           }
 

@@ -13,7 +13,7 @@ const Faqs = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper id="faqs">
       <div className="faqs">
         <div className="faqs-content">
           <div className="faqs-title">

@@ -17,17 +17,17 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-options">
-          <div className="navbar-items">
-            <Link to={'#timeline'} className="navbar-item">
+        <div className="navbar-items">
+            <a href={'/#timeline'} className="navbar-item">
               Timeline
-            </Link>
-            <Link to={'#overview'} className="navbar-item">
+            </a>
+            <a href={'/#overview'} className="navbar-item">
               Overview
-            </Link>
-            <Link to={'#faqs'} className="navbar-item">
+            </a>
+            <a href={'/#faqs'} className="navbar-item">
               FAQs
-            </Link>
-            <Link to={'/contact'} className="navbar-item" id="ct">
+            </a>
+            <Link to={'/contact'} className="navbar-item">
               Contact
             </Link>
           </div>

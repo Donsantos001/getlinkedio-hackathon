@@ -1,7 +1,7 @@
 import GradButton from 'components/GradButton';
+import JudgeImage from 'components/JudgeImage';
 import React from 'react';
 import styled from 'styled-components';
-import JudgeImage from '../../assets/judge-image.svg';
 
 const Judge = () => {
   return (
@@ -11,7 +11,7 @@ const Judge = () => {
           <div className="star-small">{/* <img src={StarSmall} alt="" /> */}</div>
           <div className="arrow">{/* <img src={Arrow} alt="" /> */}</div>
           <div className="judge-image-con">
-            <img src={JudgeImage} alt="" />
+            <JudgeImage />
           </div>
         </div>
 
@@ -117,11 +117,6 @@ const Wrapper = styled.div`
           min-width: auto;
         }
 
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
       }
 
       .star-small {

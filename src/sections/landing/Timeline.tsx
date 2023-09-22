@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Timeline = () => {
   return (
-    <Wrapper>
+    <Wrapper id="timeline">
       <div className="timeline">
         <div className="timeline-head">
           <h2 className="timeline-title">Timeline</h2>
