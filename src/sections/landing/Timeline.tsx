@@ -27,7 +27,7 @@ const Timeline = () => {
 };
 
 const Wrapper = styled.div`
-  padding: 50px 60px;
+  padding: 60px 60px;
 
   @media (max-width: 768px) {
     padding: 50px 10px;
@@ -51,6 +51,8 @@ const Wrapper = styled.div`
     }
 
     .timeline-text {
+      max-width: 380px;
+      margin: 0 auto;
       font-size: 14px;
       @media (max-width: 768px) {
         font-size: 13px;

@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import BG from '../../assets/rewards-background.png';
 import Trophy from '../../assets/rewards-trophy.svg';
 import Medal from '../../assets/rewards-medal.svg';
 
 const Rewards = () => {
   return (
-    <Wrapper bg={BG}>
+    <Wrapper>
       <div className="rewards">
         <div className="rewards-title">
           <div className="rewards-title-text">
@@ -31,15 +30,9 @@ const Rewards = () => {
   );
 };
 
-const Wrapper = styled.div<{ bg: any }>`
-  padding: 40px 30px 70px 30px;
-  //   background-image: url(${({ bg }) => bg});
-  //   background-size: cover;
-  //   background-position: center;
-  //   background-repeat: no-repeat;
-  //   background-opacity: 0.4;
-  //   width: 100%;
-  //   height: 100%;
+const Wrapper = styled.div`
+  padding: 60px 30px 70px 30px;
+  background-color: ${({ theme }) => theme.backgroundDark}ED;
 
   .rewards-title {
     padding-left: 55%;
@@ -90,16 +83,22 @@ const Wrapper = styled.div<{ bg: any }>`
     }
 
     .trophy-con {
+      position: relative;
+      top: -40px;
       width: 40%;
-      padding-top: 40px;
+      padding-top: 0px;
+
       @media (max-width: 600px) {
+        position: static;
+        top: auto;
+        padding-top: 40px;
         width: 100%;
       }
     }
 
     .medal-con {
       width: 60%;
-      padding-top: 30px;
+      padding-top: 40px;
       @media (max-width: 600px) {
         width: 100%;
       }

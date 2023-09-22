@@ -80,13 +80,17 @@ const Container = styled.div<{ invert?: boolean; first: boolean }>`
       justify-content: end;
 
       .tl-content-inner {
-        padding: 0 20px;
+        padding: 0 50px;
+
+        @media (max-width: 900px) {
+          padding: 0 20px;
+        }
 
         .tl-detail {
           position: absolute;
-          right: ${({ invert }) => (invert ? 'auto' : 'calc(100% + 38px)')};
-          left: ${({ invert }) => (invert ? 'calc(100% + 38px)' : 'auto')};
-          width: calc(100% - 38px);
+          right: ${({ invert }) => (invert ? 'auto' : 'calc(100% + 43px)')};
+          left: ${({ invert }) => (invert ? 'calc(100% + 43px)' : 'auto')};
+          width: calc(100% - 78px);
           text-align: ${({ invert }) => (invert ? 'left' : 'right')};
           transform: translateY(-50%);
 

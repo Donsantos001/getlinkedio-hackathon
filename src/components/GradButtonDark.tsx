@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const GradButton = ({
+const GradButtonDark = ({
   label,
   action = () => null,
   full,
@@ -13,7 +13,9 @@ const GradButton = ({
 }) => {
   return (
     <Container full={full} onClick={action} type={submit ? 'submit' : 'button'}>
-      <div>{label}</div>
+      <div className="bt-inner">
+        <div>{label}</div>
+      </div>
     </Container>
   );
 };
@@ -21,20 +23,26 @@ const GradButton = ({
 const Container = styled.button<{ full?: boolean }>`
   outline: none;
   border: none;
-  background: linear-gradient(
-    90deg,
-    ${({ theme }) => theme.gradientStart} 0%,
-    ${({ theme }) => theme.gradientEnd} 100%
+  background-image: linear-gradient(
+    to top,
+    ${({ theme }) => theme.gradientStart},
+    ${({ theme }) => theme.gradientEnd}
   );
   border-radius: 4px;
-  padding: 15px 50px;
   cursor: pointer;
+  padding: 2px;
   width: ${({ full }) => (full ? '100%' : 'auto')};
 
-  & > div {
-    font-size: 16px;
-    color: ${({ theme }) => theme.text};
+  .bt-inner {
+    border-radius: 4px;
+    padding: 13px 48px;
+    background-color: ${({ theme }) => theme.background};
+
+    & > div {
+      font-size: 16px;
+      color: ${({ theme }) => theme.text};
+    }
   }
 `;
 
-export default GradButton;
+export default GradButtonDark;

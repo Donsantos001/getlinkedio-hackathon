@@ -235,7 +235,7 @@ const Wrapper = styled.div`
         border-radius: 4px;
 
         .policy-box {
-            padding: 30px 30px 30px 40px;
+            padding: 40px 30px 40px 40px;
             font-size: 14px;
     
             @media (max-width: 768px) {

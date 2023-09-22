@@ -1,17 +1,29 @@
-import React from 'react';
-import Navbar from 'sections/landing/Navbar';
+import React, { useState } from 'react';
+import Navbar from 'sections/register/Navbar';
 import styled from 'styled-components';
 import RegisterImage from '../assets/register-image.svg';
 import Movement from 'components/Movement';
+import GradButton from 'components/GradButton';
+import SuccessModal from 'sections/register/SuccessModal';
 
 const Register = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    //after sumbit
+    setModalOpen(true);
+  };
+
   return (
     <Wrapper>
       <div className="navbar">
         <Navbar />
       </div>
       <div className="navbar-sm">
-        <Navbar />
+        <div className="nsm">
+          <h3>Register</h3>
+        </div>
       </div>
 
       <div className="register">
@@ -21,7 +33,7 @@ const Register = () => {
           </div>
 
           <div className="register-form">
-            <form action="">
+            <form action="" onSubmit={handleSubmit}>
               <div className="register-form-inner">
                 <h2 className="title">Register</h2>
                 <div className="movement">
@@ -30,7 +42,7 @@ const Register = () => {
                 </div>
                 <h2 className="create">CREATE YOUR ACCOUNT</h2>
 
-                <div className="field-con">
+                <div className="field-con mut">
                   <div className="field">
                     <label htmlFor="">Team's Name</label>
                     <div className="input-con">
@@ -45,7 +57,7 @@ const Register = () => {
                   </div>
                 </div>
 
-                <div className="field-con">
+                <div className="field-con mut">
                   <div className="field">
                     <label htmlFor="">Email</label>
                     <div className="input-con">
@@ -89,17 +101,27 @@ const Register = () => {
 
                 <div className="agree">
                   <input type="checkbox" name="agree" id="agree" />
-                  <p>I agree with the event terms and conditions and privacy policy</p>
+                  <div className="txt">
+                    <span>I agree with the event terms and conditions and privacy policy</span>
+                  </div>
                 </div>
 
                 <div className="submit-button">
-                  <button type="submit">Submit</button>
+                  <GradButton full submit label="Submit" />
                 </div>
               </div>
             </form>
           </div>
         </div>
       </div>
+
+      {modalOpen && (
+        <SuccessModal
+          close={() => {
+            setModalOpen(false);
+          }}
+        />
+      )}
     </Wrapper>
   );
 };
@@ -110,6 +132,13 @@ const Wrapper = styled.div`
     height: 100%;
     object-fit: contain;
   }
+
+  font-size: 14px;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+
   .navbar {
     @media (max-width: 900px) {
       display: none;
@@ -122,21 +151,41 @@ const Wrapper = styled.div`
     @media (max-width: 900px) {
       display: block;
     }
+
+    .nsm {
+      padding: 40px 70px 0 70px;
+
+      & > h3 {
+        font-family: 'Clash Display';
+        color: ${({ theme }) => theme.primary};
+        font-size: 26px;
+
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
+      }
+    }
   }
 
   .register {
-    padding: 30px 60px;
+    padding: 30px 60px 40px 60px;
+
+    @media (max-width: 1024px) {
+      padding: 20px 30px 40px 30px;
+    }
+
     .register-inner {
       display: flex;
 
       @media (max-width: 900px) {
         flex-direction: column;
+        align-items: center;
       }
 
       .register-image {
         width: 45%;
         @media (max-width: 900px) {
-          width: 100%;
+          width: 60%;
         }
       }
 
@@ -146,10 +195,24 @@ const Wrapper = styled.div`
         padding: 50px 80px;
         border-radius: 12px;
         background-color: rgba(255, 255, 255, 0.03);
+        // position: relative;
+        // left: -30px;
+
+        // @media (max-width: 900px) {
+        //   position: static;
+        //   left: auto;
+        // }
+
+        @media (max-width: 475px) {
+          padding: 20px 30px 30px 50px;
+        }
 
         @media (max-width: 600px) {
           background-color: transparent;
           padding: 30px 0;
+        }
+        @media (max-width: 1024px) {
+          padding: 30px 40px;
         }
 
         .register-form-inner {
@@ -171,11 +234,6 @@ const Wrapper = styled.div`
 
             p {
               margin-right: 10px;
-              font-size: 14px;
-
-              @media (max-width: 768px) {
-                font-size: 13px;
-              }
             }
           }
 
@@ -228,7 +286,8 @@ const Wrapper = styled.div`
                 }
 
                 select {
-                  padding: 6px 10px;
+                  height: 40px;
+                  padding: 6px 12px;
                   resize: none;
                   font-size: inherit;
                   font-family: 'Montserrat';
@@ -237,6 +296,33 @@ const Wrapper = styled.div`
                   }
                 }
               }
+            }
+          }
+          .mut {
+            @media (max-width: 768px) {
+              grid-template-columns: 1fr;
+            }
+          }
+
+          .rem {
+            @media (max-width: 768px) {
+              grid-template-columns: 6fr 4fr;
+            }
+          }
+
+          .imp {
+            color: ${({ theme }) => theme.gradientStart};
+            margin-bottom: 10px;
+          }
+
+          .agree {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+
+            #agree {
+              display: block;
+              margin: 6px 10px 0 0;
             }
           }
         }

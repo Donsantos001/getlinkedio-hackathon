@@ -66,7 +66,7 @@ padding: 60px 20px 30px 40px;
 }
 
 .faqs {
-  padding: 30px 0 20px 0;
+  padding: 60px 0 20px 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;

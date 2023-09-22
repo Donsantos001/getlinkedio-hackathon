@@ -27,7 +27,7 @@ const Container = styled.div`
 
     .line {
       flex: 1;
-      width: 2px;
+      width: 3px;
       background-color: ${({ theme }) => theme.primary};
       margin-bottom: 5px;
     }
@@ -45,6 +45,11 @@ const Container = styled.div`
           ${({ theme }) => theme.secondary} 0%,
           ${({ theme }) => theme.primary} 100%
         );
+
+        @media (max-width: 900px) {
+          width: 30px;
+          height: 30px;
+        }
 
         .number {
           font-weight: bold;

@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from 'sections/landing/Navbar';
+import Navbar from 'sections/contact/Navbar';
 import styled from 'styled-components';
 import Socials from '../assets/footer-social.svg';
 import GradButton from 'components/GradButton';
@@ -79,7 +79,7 @@ const Contact = () => {
                 </div>
 
                 <div className="submit-button">
-                  <GradButton label="Submit" action={() => null} />
+                  <GradButton submit label="Submit" action={() => null} />
                 </div>
 
                 <div className="share-sm">
