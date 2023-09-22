@@ -31,8 +31,12 @@ const Rewards = () => {
 };
 
 const Wrapper = styled.div`
-  padding: 60px 30px 70px 30px;
+  padding: 60px 50px 70px 50px;
   background-color: ${({ theme }) => theme.backgroundDark}ED;
+
+  @media (max-width: 768px) {
+    padding: 60px 20px 70px 20px;
+  }
 
   .rewards-title {
     padding-left: 55%;

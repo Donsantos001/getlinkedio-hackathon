@@ -26,8 +26,9 @@ const Sponsors = () => {
 
 const Wrapper = styled.div`
   padding: 40px;
+
   @media (max-width: 768px) {
-    padding: 40px 20px;
+    padding: 40px 15px;
   }
 
   .sponsors-head {
@@ -37,6 +38,7 @@ const Wrapper = styled.div`
 
     @media (max-width: 768px) {
       margin-bottom: 35px;
+      padding: 0px 5px;
     }
 
     .sponsors-title {

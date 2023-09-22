@@ -113,8 +113,8 @@ const Wrapper = styled.div`
         height: 100%;
         min-width: 410px;
 
-        @media (min-width: 900px) {
-          min-width: 300px;
+        @media (max-width: 900px) {
+          min-width: auto;
         }
 
         img {

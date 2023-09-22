@@ -9,7 +9,7 @@ const FaqImage = () => {
       <div className="faq">
         <img src={Faq} alt="" />
       </div>
-      <div className="ques q1">
+      {/* <div className="ques q1">
         <img src={Ques} alt="" />
       </div>
       <div className="ques q2">
@@ -17,7 +17,7 @@ const FaqImage = () => {
       </div>
       <div className="ques q3">
         <img src={Ques} alt="" />
-      </div>
+      </div> */}
     </Container>
   );
 };
@@ -35,31 +35,31 @@ const Container = styled.div`
       }
     }
 
-    .ques {
-      position: absolute;
+    // .ques {
+    //   position: absolute;
 
-        img {
-          width: 100%;
-          height 100%;
-          object-fit: contain;
-        }
-    }
+    //     img {
+    //       width: 100%;
+    //       height 100%;
+    //       object-fit: contain;
+    //     }
+    // }
 
-    .q1 {
-      width: 6%;
-      left: 10%;
-      top: -4%;
-    }
-    .q2 {
-      width: 9%;
-      left: 33%;
-      top: -13%;
-    }
-    .q3 {
-      width: 6%;
-      left: 56%;
-      top: -4%;
-    }
+    // .q1 {
+    //   width: 6%;
+    //   left: 10%;
+    //   top: -4%;
+    // }
+    // .q2 {
+    //   width: 9%;
+    //   left: 33%;
+    //   top: -13%;
+    // }
+    // .q3 {
+    //   width: 6%;
+    //   left: 56%;
+    //   top: -4%;
+    // }
 `;
 
 export default FaqImage;

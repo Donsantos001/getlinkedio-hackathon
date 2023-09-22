@@ -42,10 +42,6 @@ const Faqs = () => {
         </div>
 
         <div className="faqs-image">
-          <div className="star-small">
-            <img src={StarPurple} alt="" />
-          </div>
-
           <div className="ric">
             <FaqImage />
           </div>
@@ -66,10 +62,10 @@ padding: 60px 20px 30px 40px;
 }
 
 .faqs {
-  padding: 60px 0 20px 0;
+  padding: 30px 0 20px 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 
   @media (max-width: 900px) {
     flex-direction: column;
@@ -81,7 +77,7 @@ padding: 60px 20px 30px 40px;
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-left: 6px;
+    margin-left: 20px;
     max-width: 700px;
 
     @media (max-width: 900px) {
@@ -90,7 +86,7 @@ padding: 60px 20px 30px 40px;
       width: auto;
       padding: 5px;
       max-width: 580px;
-      padding-top: 70px;
+      padding-top: 70px;margin: 0 10px;
     }
 
     .ric {

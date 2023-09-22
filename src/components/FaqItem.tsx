@@ -36,6 +36,7 @@ const Container = styled.div<{ open: boolean }>`
     border-bottom: 1px solid ${({ theme }) => theme.primary};
     margin-bottom: 20px;
     padding-bottom: 10px;
+    text-align: left;
 
     .ques-con {
       display: flex;

@@ -81,16 +81,17 @@ const Footer = () => {
 };
 
 const Wrapper = styled.div`
-  padding: 40px 80px;
+  padding: 40px 110px;
   font-size: 14px;
   background-color: ${({ theme }) => theme.backgroundDark};
 
-  @media (max-width: 768px) {
-    font-size: 13px;
+  @media (max-width: 1024px) {
+    padding: 40px 80px;
   }
 
   @media (max-width: 768px) {
-    padding: 40px 60px;
+    font-size: 13px;
+    padding: 40px 30px;
   }
 
   .footer {

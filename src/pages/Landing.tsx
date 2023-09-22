@@ -5,6 +5,17 @@ import Header from 'sections/landing/Header';
 import Intro from 'sections/landing/Intro';
 import PurpleLens from '../assets/header-purple-lens-left.svg';
 import PurpleLens2 from '../assets/header-purple-lens-right.svg';
+import RulesLeft from '../assets/rules-pp-left.svg';
+import RulesRight from '../assets/rules-pp-left.svg';
+
+import RewardsLeft from '../assets/rewards-pp-left.svg';
+import RewardsRight from '../assets/judge-pp-right.svg';
+
+import SponsorsLeft from '../assets/rules-pp-left.svg';
+import SponsorsRight from '../assets/rules-pp-right.svg';
+import PolicyLeft from '../assets/rules-pp-left.svg';
+import PolicyRight from '../assets/rules-pp-right.svg';
+
 import Metrix from '../assets/header-metrix.svg';
 import Star from '../assets/star.svg';
 import StarLight from '../assets/header-star-light.svg';
@@ -49,11 +60,23 @@ const Landing = () => {
         <Intro />
       </section>
       <HR />
-      <section>
+      <section className="rules-sec">
+        <div className="lighting-left">
+          <img src={RulesLeft} alt="" />
+        </div>
+        <div className="lighting-right">
+          <img src={RulesRight} alt="" />
+        </div>
         <Rules />
       </section>
       <HR />
-      <section>
+      <section className="judge-sec">
+        {/* <div className="lighting-left">
+          <img src={RulesLeft} alt="" />
+        </div> */}
+        <div className="lighting-right">
+          <img src={RulesRight} alt="" />
+        </div>
         <Judge />
       </section>
       <HR />
@@ -65,15 +88,30 @@ const Landing = () => {
         <Timeline />
       </section>
       <HR />
-      <section>
+      <section className="rewards-sec">
+        <div className="lighting-left">
+          <img src={RulesLeft} alt="" />
+        </div>
+        <div className="lighting-right">
+          <img src={RulesRight} alt="" />
+        </div>
         <Rewards />
       </section>
       <HR />
-      <section>
+      <section className="sponsors-sec">
+        <div className="lighting-left">
+          <img src={RulesLeft} alt="" />
+        </div>
+        <div className="lighting-right">
+          <img src={RulesRight} alt="" />
+        </div>
         <Sponsors />
       </section>
       <HR />
-      <section>
+      <section className="policy-sec">
+        <div className="lighting-left">
+          <img src={RulesLeft} alt="" />
+        </div>
         <Policy />
       </section>
       <footer>
@@ -84,23 +122,36 @@ const Landing = () => {
 };
 
 const PageWrapper = styled.div`
+  overflow-x: hidden;
   background-color: ${({ theme }) => theme.background};
 
   header {
     overflow: hidden;
     position: relative;
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     .lighting-left {
+      width: 70%;
       position: absolute;
       top: -30px;
       left: 0;
       opacity: 0.68;
     }
     .lighting-right {
+      width: 70%;
       position: absolute;
-      top: -30px;
+      top: 30px;
       right: 0;
       opacity: 0.68;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
     .metrix {
       position: absolute;
@@ -126,6 +177,156 @@ const PageWrapper = styled.div`
     .sl2 {
       bottom: 160px;
       left: 35%;
+    }
+  }
+
+  .rules-sec {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .lighting-left {
+      width: 70%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(0%, -30%);
+      opacity: 0.68;
+    }
+    .lighting-right {
+      width: 70%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translate(40%, 40%);
+      opacity: 0.68;
+
+      @media (max-width: 768px) {
+        transform: translate(40%, 60%);
+      }
+    }
+  }
+  .judge-sec {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    // .lighting-left {
+    //   width: 70%;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   transform: translate(0%, -30%);
+    //   opacity: 0.68;
+    // }
+    .lighting-right {
+      width: 70%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translate(40%, 50%);
+      opacity: 0.68;
+
+      @media (max-width: 768px) {
+        transform: translate(60%, 0%);
+      }
+    }
+  }
+
+  .rewards-sec {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .lighting-left {
+      width: 70%;
+      position: absolute;
+      top: -10%;
+      left: 0;
+      opacity: 0.68;
+
+      @media (max-width: 768px) {
+        top: 0;
+        right: 100%;
+        left: auto;
+        transform: translate(0%, -30%);
+      }
+    }
+    .lighting-right {
+      width: 70%;
+      position: absolute;
+      bottom: -20%;
+      right: 0;
+      transform: translateX(70%);
+      opacity: 0.68;
+      @media (max-width: 768px) {
+        bottom: auto;
+        top: 100%;
+        transform: translate(20%, -70%);
+      }
+    }
+  }
+  .sponsors-sec {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .lighting-left {
+      width: 70%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-30%, -30%);
+      opacity: 0.68;
+      @media (max-width: 768px) {
+        transform: translate(-80%, -50%);
+      }
+    }
+    .lighting-right {
+      width: 70%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translate(40%, 40%);
+      opacity: 0.68;
+
+      @media (max-width: 768px) {
+        transform: translate(40%, 50%);
+      }
+    }
+  }
+  .policy-sec {
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .lighting-left {
+      width: 70%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      opacity: 0.68;
+      transform: translate(-20%, 25%);
+
+      @media (max-width: 768px) {
+        bottom: 0;
+        transform: translate(-35%, 50%);
+      }
     }
   }
 `;

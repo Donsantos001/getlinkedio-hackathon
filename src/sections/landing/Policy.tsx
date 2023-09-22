@@ -99,6 +99,10 @@ const Wrapper = styled.div`
     padding: 20px 40px;
   }
 
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+
   .policy {
     padding: 30px 0 20px 0;
     display: flex;
@@ -115,7 +119,7 @@ const Wrapper = styled.div`
       width: 490px;
       display: flex;
       flex-direction: column;
-      margin-left: 40px;
+      margin-left: 80px;
 
       @media (max-width: 900px) {
         flex-direction: column-reverse;
