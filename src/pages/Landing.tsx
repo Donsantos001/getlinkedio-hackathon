@@ -84,7 +84,7 @@ const Landing = () => {
 };
 
 const PageWrapper = styled.div`
-  background-color: ${({ theme }) => theme.backround};
+  background-color: ${({ theme }) => theme.background};
 
   header {
     overflow: hidden;
