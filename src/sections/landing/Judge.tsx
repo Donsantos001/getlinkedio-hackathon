@@ -2,13 +2,17 @@ import GradButton from 'components/GradButton';
 import JudgeImage from 'components/JudgeImage';
 import React from 'react';
 import styled from 'styled-components';
+import StarSmall from '../../assets/intro-star-medium.svg';
+import StarMedium from '../../assets/rules-star-white.svg';
 
 const Judge = () => {
   return (
     <Wrapper>
       <div className="judge">
         <div className="judge-image">
-          <div className="star-small">{/* <img src={StarSmall} alt="" /> */}</div>
+          <div className="star-small" data-aos="zoom-in-up">
+            <img src={StarSmall} alt="" />
+          </div>
           <div className="arrow">{/* <img src={Arrow} alt="" /> */}</div>
           <div className="judge-image-con">
             <JudgeImage />
@@ -66,6 +70,10 @@ const Judge = () => {
           <div className="judge-button">
             <GradButton label="Read More" />
           </div>
+
+          <div className="star-medium" data-aos="zoom-in-up">
+            <img src={StarMedium} alt="" />
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -116,14 +124,13 @@ const Wrapper = styled.div`
         @media (max-width: 900px) {
           min-width: auto;
         }
-
       }
 
       .star-small {
         position: absolute;
-        right: calc(100% + 20px);
-        top: 35%;
-        width: 20px;
+        right: 76%;
+        top: -17%;
+        width: 18px;
 
         img {
           width: 100%;
@@ -131,10 +138,11 @@ const Wrapper = styled.div`
           object-fit: contain;
         }
 
-        @media (max-width: 900px){
-          width: 15px;
-          top: 30%;
-          right: 90%;
+        @media (max-width: 900px) {
+          width: 14px;
+          top: -16px;
+          right: 50%;
+          transform: translateX(50%);
         }
       }
 
@@ -150,17 +158,18 @@ const Wrapper = styled.div`
     }
 
     .judge-content {
+      position: relative;
       max-width: 530px;
       color: ${({ theme }) => theme.text};
 
-      @media (max-width: 900px){
+      @media (max-width: 900px) {
         text-align: center;
       }
 
       .judge-title {
         position: relative;
 
-        @media (max-width: 900px){
+        @media (max-width: 900px) {
           padding-left: 15px;
         }
 
@@ -182,25 +191,13 @@ const Wrapper = styled.div`
           }
         }
 
-        .star-medium {
-          @media (max-width: 900px){
-            position-absolute;
-            width: 15px;
-          }
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-          }
-        }
         .ph {
           display: none;
 
-          @media(max-width: 900px){
-              display: block;
+          @media (max-width: 900px) {
+            display: block;
           }
-      }
+        }
       }
 
       .judge-text {
@@ -211,17 +208,36 @@ const Wrapper = styled.div`
           font-size: 13px;
         }
         @media (max-width: 600px) {
-            text-align:center;
-          }
-        
+          text-align: center;
+        }
 
         & > p {
-            margin-bottom: 20px;
+          margin-bottom: 20px;
 
-            .judge-key {
-                font-weight: bold;
-                color: ${({ theme }) => theme.tertiary};
-            }
+          .judge-key {
+            margin-right: 6px;
+            font-weight: bold;
+            color: ${({ theme }) => theme.tertiary};
+          }
+        }
+      }
+
+      .star-medium {
+        position: absolute;
+        width: 18px;
+        right: calc(100% + 26px);
+        bottom: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+
+        @media (max-width: 900px) {
+          width: 13px;
+          right: 0;
+          bottom: 12px;
         }
       }
 

@@ -7,7 +7,6 @@ import PurpleLens from '../assets/header-purple-lens-left.svg';
 import PurpleLens2 from '../assets/header-purple-lens-right.svg';
 import RulesLeft from '../assets/rules-pp-left.svg';
 import RulesRight from '../assets/rules-pp-left.svg';
-
 import Metrix from '../assets/header-metrix.svg';
 import Star from '../assets/star.svg';
 import StarLight from '../assets/header-star-light.svg';
@@ -19,8 +18,14 @@ import Rewards from 'sections/landing/Rewards';
 import Sponsors from 'sections/landing/Sponsors';
 import Policy from 'sections/landing/Policy';
 import Footer from 'sections/landing/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Landing = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <PageWrapper>
       <header>
@@ -33,13 +38,13 @@ const Landing = () => {
         <div className="metrix">
           <img src={Metrix} alt="" />
         </div>
-        <div className="star">
+        <div className="star" data-aos="zoom-in-up">
           <img src={Star} alt="" />
         </div>
-        <div className="star-light sl1">
+        <div className="star-light sl1" data-aos="zoom-in-up">
           <img src={StarLight} alt="" />
         </div>
-        <div className="star-light sl2">
+        <div className="star-light sl2" data-aos="zoom-in-up">
           <img src={StarLight} alt="" />
         </div>
 
@@ -165,15 +170,33 @@ const PageWrapper = styled.div`
     .star {
       top: 200px;
       left: 160px;
+
+      @media (max-width: 768px) {
+        top: 140px;
+        left: 35%;
+        width: 13px;
+      }
     }
 
     .sl1 {
       top: 280px;
       left: 52%;
+      @media (max-width: 768px) {
+        width: 10px;
+        top: 140px;
+        left: 84%;
+      }
     }
     .sl2 {
       bottom: 160px;
       left: 35%;
+
+      @media (max-width: 768px) {
+        bottom: auto;
+        width: 10px;
+        top: 344px;
+        left: 77%;
+      }
     }
   }
 

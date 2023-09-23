@@ -7,8 +7,15 @@ import React from 'react';
 import styled from 'styled-components';
 import GradButton from 'components/GradButton';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Header = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <Wrapper>
       <div className="header-theme">
@@ -35,7 +42,7 @@ const Header = () => {
                 <h2>getlinked </h2>
                 <div className="htaii">
                   <h2>Tech</h2>
-                  <div className="bulb">
+                  <div className="bulb" data-aos="zoom-in-up">
                     <img src={Bulb} alt="" />
                   </div>
                 </div>

@@ -15,8 +15,8 @@ const Rules = () => {
               <h2 className="rtt1">Rules and</h2>
               <h2 className="rtt2">Guidelines</h2>
             </div>
-            <div className="star-medium">
-              <img src={StarWhite} alt="" />
+            <div className="star-medium" data-aos="zoom-in-up">
+              <img src={StarPurple} alt="" />
             </div>
           </div>
 
@@ -32,8 +32,8 @@ const Rules = () => {
         </div>
 
         <div className="rules-image">
-          <div className="star-small">
-            <img src={StarPurple} alt="" />
+          <div className="star-small" data-aos="zoom-in-up">
+            <img src={StarWhite} alt="" />
           </div>
 
           <div className="ric">
@@ -97,9 +97,9 @@ const Wrapper = styled.div`
 
       .star-small {
         position: absolute;
-        right: calc(100% + 20px);
-        top: 35%;
-        width: 20px;
+        right: calc(100% - 5px);
+        top: 65%;
+        width: 16px;
 
         img {
           width: 100%;
@@ -107,21 +107,19 @@ const Wrapper = styled.div`
           object-fit: contain;
         }
 
-        @media (max-width: 900px){
-          width: 15px;
-          top: 30%;
+        @media (max-width: 900px) {
+          width: 13px;
+          top: 50%;
           right: 90%;
         }
       }
-
-      
     }
 
     .rules-content {
       max-width: 530px;
       color: ${({ theme }) => theme.text};
 
-      @media (max-width: 900px){
+      @media (max-width: 900px) {
         text-align: center;
       }
 
@@ -130,9 +128,11 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media (max-width: 900px){
-            padding-left: 15px;
-          }
+
+        @media (max-width: 900px) {
+          justify-content: center;
+          padding-left: 15px;
+        }
 
         .rules-title-text {
           font-family: 'Clash Display';
@@ -152,9 +152,15 @@ const Wrapper = styled.div`
         }
 
         .star-medium {
-          @media (max-width: 900px){
-            position-absolute;
-            width: 15px;
+          position: absolute;
+          width: 15px;
+          right: calc(50% + 20px);
+          top: -25%;
+
+          @media (max-width: 900px) {
+            width: 12px;
+            right: 12%;
+            top: calc(90% - 28px);
           }
 
           img {
@@ -165,11 +171,11 @@ const Wrapper = styled.div`
         }
 
         .ph {
-            display: none;
+          display: none;
 
-            @media(max-width: 900px){
-                display: block;
-            }
+          @media (max-width: 900px) {
+            display: block;
+          }
         }
       }
 
@@ -177,8 +183,8 @@ const Wrapper = styled.div`
         font-size: 14px;
 
         @media (max-width: 768px) {
-            font-size: 13px;
-          }
+          font-size: 13px;
+        }
       }
     }
   }
