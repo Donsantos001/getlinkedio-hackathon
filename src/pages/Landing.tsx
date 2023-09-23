@@ -130,9 +130,14 @@ const PageWrapper = styled.div`
     .lighting-left {
       width: 70%;
       position: absolute;
-      top: -30px;
+      top: 0;
       left: 0;
       opacity: 0.68;
+
+      @media (max-width: 768px) {
+        width: 90%;
+        transform: translate(-20%, 5%);
+      }
     }
     .lighting-right {
       width: 70%;
