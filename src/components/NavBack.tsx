@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import AngleBack from '../assets/angle-left.svg';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const NavBack = () => {
+  const navigate = useNavigate();
   return (
     <Container>
-      <Link to="/">
-        <div className="back">
-          <div className="arrow-con">
-            <div className="arrow">
-              <img src={AngleBack} alt="" />
-            </div>
+      {/* <Link to="/"> */}
+      <div className="back" onClick={() => navigate(-1)}>
+        <div className="arrow-con">
+          <div className="arrow">
+            <img src={AngleBack} alt="" />
           </div>
         </div>
-      </Link>
+      </div>
+      {/* </Link> */}
     </Container>
   );
 };

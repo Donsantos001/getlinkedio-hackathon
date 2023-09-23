@@ -14,7 +14,7 @@ const Policy = () => {
       <div className="policy">
         <div className="policy-content">
           <div className="policy-title">
-            <div className="policy-title-text">
+            <div className="policy-title-text" data-aos="fade-right">
               <h2 className="ptt1">Privacy Policy and</h2>
               <h2 className="ptt2">Terms</h2>
             </div>
@@ -23,18 +23,18 @@ const Policy = () => {
             </div>
           </div>
 
-          <div className="policy-update">
+          <div className="policy-update" data-aos="fade-up">
             <p>Last updated on September 12, 2023</p>
           </div>
 
-          <div className="policy-text">
+          <div className="policy-text" data-aos="fade-up">
             <p>
               Below are our privacy & policy, which outline a lot of goodies. it’s our aim to always take of
               our participant
             </p>
           </div>
 
-          <div className="policy-box-con">
+          <div className="policy-box-con" data-aos="fade-up">
             <div className="policy-box">
               <p className="overview">
                 At getlinked tech Hackathon 1.0, we value your privacy and are committed to protecting your

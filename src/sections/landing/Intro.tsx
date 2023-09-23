@@ -9,7 +9,7 @@ const Intro = () => {
   return (
     <Wrapper id="overview">
       <div className="intro">
-        <div className="intro-image">
+        <div className="intro-image" data-aos="zoom-in">
           <div className="star-small" data-aos="zoom-in">
             <img src={StarSmall} alt="" />
           </div>
@@ -24,7 +24,7 @@ const Intro = () => {
         <div className="intro-content">
           <div className="intro-title">
             <div className="ph"></div>
-            <div className="intro-title-text">
+            <div className="intro-title-text" data-aos="fade-left">
               <h2 className="itt1">Introduction to getlinked</h2>
               <h2 className="itt2">techHackathon 1.0</h2>
             </div>
@@ -33,7 +33,7 @@ const Intro = () => {
             </div>
           </div>
 
-          <div className="intro-text">
+          <div className="intro-text" data-aos="fade-left">
             <p>
               Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape
               the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have

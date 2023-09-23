@@ -21,43 +21,43 @@ const Judge = () => {
 
         <div className="judge-content">
           <div className="judge-title">
-            <div className="judge-title-text">
+            <div className="judge-title-text" data-aos="fade-left">
               <h2 className="jtt1">Judging Criteria</h2>
               <h2 className="jtt2">Key attributes</h2>
             </div>
           </div>
 
           <div className="judge-text">
-            <p>
+            <p data-aos="fade-up">
               <span className="judge-key">Innovation and Creativity:</span>
               <span>
                 Evaluate the uniqueness and creativity of the solution. Consider whether it addresses a
                 real-world problem in a novel way or introduces innovative features.
               </span>
             </p>
-            <p>
+            <p data-aos="fade-up">
               <span className="judge-key">Functionality:</span>
               <span>
                 Assess how well the solution works. Does it perform its intended functions effectively and
                 without major issues? Judges would consider the completeness and robustness of the solution.
               </span>
             </p>
-            <p>
+            <p data-aos="fade-up">
               <span className="judge-key">Impact and Relevance:</span>
               <span>
                 Determine the potential impact of the solution in the real world. Does it address a
                 significant problem, and is it relevant to the target audience? Judges would assess the
-                potential social, economic, or environmental benefits.{' '}
+                potential social, economic, or environmental benefits.
               </span>
             </p>
-            <p>
+            <p data-aos="fade-up">
               <span className="judge-key">Technical Complexity:</span>
               <span>
                 Evaluate the technical sophistication of the solution. Judges would consider the complexity of
-                the code, the use of advanced technologies or algorithms, and the scalability of the solution.{' '}
+                the code, the use of advanced technologies or algorithms, and the scalability of the solution.
               </span>
             </p>
-            <p>
+            <p data-aos="fade-up">
               <span className="judge-key">Adherence to Hackathon Rules:</span>
               <span>
                 Judges will Ensure that the team adhered to the rules and guidelines of the hackathon,
@@ -67,7 +67,7 @@ const Judge = () => {
             </p>
           </div>
 
-          <div className="judge-button">
+          <div className="judge-button" data-aos="fade-up">
             <GradButton label="Read More" />
           </div>
 

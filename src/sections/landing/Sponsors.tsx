@@ -9,8 +9,8 @@ const Sponsors = () => {
     <Wrapper>
       <div className="sponsors">
         <div className="sponsors-head">
-          <h2 className="sponsors-title">Partners and Sponsors</h2>
-          <p className="sponsors-text">
+          <h2 className="sponsors-title" data-aos="fade-up">Partners and Sponsors</h2>
+          <p className="sponsors-text" data-aos="fade-up">
             Getlinked Hackathon 1.0 is honored to have the following major companies as its partners and
             sponsors
           </p>

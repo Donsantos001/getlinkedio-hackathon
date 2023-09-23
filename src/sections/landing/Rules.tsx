@@ -11,7 +11,7 @@ const Rules = () => {
         <div className="rules-content">
           <div className="rules-title">
             <div className="ph"></div>
-            <div className="rules-title-text">
+            <div className="rules-title-text" data-aos="fade-right">
               <h2 className="rtt1">Rules and</h2>
               <h2 className="rtt2">Guidelines</h2>
             </div>
@@ -20,7 +20,7 @@ const Rules = () => {
             </div>
           </div>
 
-          <div className="rules-text">
+          <div className="rules-text"data-aos="fade-right">
             <p>
               Our tech hackathon is a melting pot of visionaries, and its purpose is as clear as day: to shape
               the future. Whether you're a coding genius, a design maverick, or a concept wizard, you'll have
@@ -31,7 +31,7 @@ const Rules = () => {
           </div>
         </div>
 
-        <div className="rules-image">
+        <div className="rules-image" data-aos="zoom-in">
           <div className="star-small" data-aos="zoom-in">
             <img src={StarWhite} alt="" />
           </div>

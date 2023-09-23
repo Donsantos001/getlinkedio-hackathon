@@ -2,6 +2,8 @@ import GradButton from 'components/GradButton';
 import Success from '../../assets/congrats.svg';
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
+import StarLight from '../../assets/rules-star-puple.svg';
+import StarPurple from '../../assets/intro-star-medium.svg';
 
 const SuccessModal = ({ close }: { close: () => void }) => {
   const [open, setOpen] = useState(false);
@@ -39,73 +41,133 @@ const SuccessModal = ({ close }: { close: () => void }) => {
             />
           </div>
         </div>
+
+        <div className="star-purple">
+          <img src={StarPurple} alt="" />
+        </div>
+
+        <div className="star-purple-2">
+          <img src={StarPurple} alt="" />
+        </div>
+        <div className="star-grey">
+          <img src={StarLight} alt="" />
+        </div>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-    position: fixed;
-    padding: 20px 30px;
-    left:0;
-    top: 0;
-    right: 0;
-    height: 100%;
-    display: flex;
-    z-index: 15;
-    justify-content: center;
-    align-items: center;
-    background: ${({ theme }) => theme.background}ED;
-
+  position: fixed;
+  padding: 20px 30px;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  z-index: 15;
+  justify-content: center;
+  align-items: center;
+  background: ${({ theme }) => theme.background}ED;
 
   .success-modal {
     position: relative;
 
     .success {
-        border 1px solid ${({ theme }) => theme.primary};
-        border-radius: 4px;
-        text-align: center;
-        padding: 20px 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        jusify-content: center;
-        transform: scale(0.2);
-        transition: all .3s ease;
-        overflow: hidden;
+      border: 1px solid ${({ theme }) => theme.primary};
+      border-radius: 4px;
+      text-align: center;
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0.2);
+      transition: all 0.3s ease;
+      overflow: hidden;
 
-        @media (max-width: 768px) {
-            padding: 20px 30px;
-          }
-
-          &.success-open {
-            transform: scale(1);
-          }
-    
-        .success-title {
-          font-size: 12px;
-    
-          @media (max-width: 768px) {
-            font-size: 9px;
-          }
-        }
-    
-        .success-message {
-          font-size: 13px;
-    
-          @media (max-width: 768px) {
-            font-size: 12px;
-          }
-        }
-    
-        .success-button {
-          margin: 20px 0;
-          width: 100%;
-        }
-        
+      @media (max-width: 768px) {
+        padding: 20px 30px;
       }
 
-      
+      &.success-open {
+        transform: scale(1);
+      }
+
+      .success-title {
+        font-size: 12px;
+
+        @media (max-width: 768px) {
+          font-size: 9px;
+        }
+      }
+
+      .success-message {
+        font-size: 13px;
+
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+
+      .success-button {
+        margin: 20px 0;
+        width: 100%;
+      }
+    }
+
+    .star-purple {
+      position: absolute;
+      width: 15px;
+      right: -20px;
+      top: -20px;
+
+      @media (max-width: 900px) {
+        width: 12px;
+        top: -30px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .star-purple-2 {
+      position: absolute;
+      width: 15px;
+      right: 20px;
+      bottom: 5px;
+
+      @media (max-width: 900px) {
+        width: 12px;
+        bottom: -25px;
+        left: -5%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .star-grey {
+      position: absolute;
+      width: 15px;
+      left: 16%;
+      top: 40%;
+
+      @media (max-width: 900px) {
+        width: 12px;
+        top: 45%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 `;
 

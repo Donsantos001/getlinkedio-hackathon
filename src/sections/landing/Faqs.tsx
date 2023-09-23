@@ -18,7 +18,7 @@ const Faqs = () => {
         <div className="faqs-content">
           <div className="faqs-title">
             <div className="ph"></div>
-            <div className="faqs-title-text">
+            <div className="faqs-title-text" data-aos="fade-right">
               <h2 className="ftt1">Frequently Asked</h2>
               <h2 className="ftt2">Question</h2>
             </div>
@@ -27,7 +27,7 @@ const Faqs = () => {
             </div>
           </div>
 
-          <div className="faqs-text">
+          <div className="faqs-text" data-aos="fade-up">
             <p>
               We got answers to the questions that you might want to ask about{' '}
               <span>getlinked Hackathon 1.0</span>
@@ -36,12 +36,20 @@ const Faqs = () => {
 
           <div className="faqs-main">
             {faqs.map((item, index) => (
-              <FaqItem key={index} open={openIndex === index} id={index} toggleShow={toggleShow} {...item} />
+              <div data-aos="fade-up">
+                <FaqItem
+                  key={index}
+                  open={openIndex === index}
+                  id={index}
+                  toggleShow={toggleShow}
+                  {...item}
+                />
+              </div>
             ))}
           </div>
         </div>
 
-        <div className="faqs-image">
+        <div className="faqs-image" data-aos="zoom-in">
           <div className="ric">
             <FaqImage />
           </div>

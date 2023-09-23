@@ -11,17 +11,17 @@ const Rewards = () => {
     <Wrapper>
       <div className="rewards">
         <div className="rewards-title">
-          <div className="rewards-title-text">
+          <div className="rewards-title-text" data-aos="fade-left">
             <h2 className="rtt1">Prizes and</h2>
             <h2 className="rtt2">Rewards</h2>
           </div>
-          <div className="rewards-text">
+          <div className="rewards-text" data-aos="fade-left">
             <p>Highlight of the prizes or rewards for winners and for participants.</p>
           </div>
         </div>
 
         <div className="rewards-images">
-          <div className="trophy-con">
+          <div className="trophy-con" data-aos="zoom-in">
             <img src={Trophy} alt="" />
           </div>
           <div className="medal-con">

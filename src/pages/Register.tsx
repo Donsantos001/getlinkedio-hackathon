@@ -9,6 +9,9 @@ import GradButton from 'components/GradButton';
 import SuccessModal from 'sections/register/SuccessModal';
 import { useMutation, useQuery } from 'react-query';
 import { apiMutate } from 'utils/query';
+import StarLight from '../assets/rules-star-puple.svg';
+import StarWhite from '../assets/rules-star-white.svg';
+import StarPurple from '../assets/intro-star-medium.svg';
 
 type FormDataType = {
   email: string;
@@ -47,7 +50,6 @@ const Register = () => {
     },
     {
       onSuccess: (data: any) => {
-        console.log(data);
         setModalOpen(true);
       },
     }
@@ -184,7 +186,9 @@ const Register = () => {
                     id="agree"
                   />
                   <div className="txt">
-                    <span>I agree with the event terms and conditions and privacy policy</span>
+                    <label htmlFor="agree">
+                      <span>I agree with the event terms and conditions and privacy policy</span>
+                    </label>
                   </div>
                 </div>
 
@@ -209,6 +213,22 @@ const Register = () => {
       </div>
       <div className="lighting-right">
         <img src={RulesRight} alt="" />
+      </div>
+
+      <div className="star-purple">
+        <img src={StarPurple} alt="" />
+      </div>
+      <div className="star-purple-2">
+        <img src={StarPurple} alt="" />
+      </div>
+      <div className="star-grey">
+        <img src={StarLight} alt="" />
+      </div>
+      <div className="star-grey-2">
+        <img src={StarLight} alt="" />
+      </div>
+      <div className="star-white">
+        <img src={StarWhite} alt="" />
       </div>
     </Wrapper>
   );
@@ -316,6 +336,9 @@ const Wrapper = styled.div`
             @media (max-width: 768px) {
               font-size: 20px;
             }
+            @media (max-width: 900px) {
+              display: none;
+            }
           }
 
           & > .movement {
@@ -420,6 +443,10 @@ const Wrapper = styled.div`
               display: block;
               margin: 6px 10px 0 0;
             }
+
+            .txt > label {
+              cursor: pointer;
+            }
           }
         }
       }
@@ -454,6 +481,62 @@ const Wrapper = styled.div`
     opacity: 0.68;
 
     @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .star-purple {
+    position: fixed;
+    width: 16px;
+    left: 10%;
+    top: 25%;
+
+    @media (max-width: 900px) {
+      width: 12px;
+      top: 25%;
+      left: 80%;
+    }
+  }
+  .star-purple-2 {
+    position: fixed;
+    width: 16px;
+    left: 40%;
+    bottom: 20%;
+
+    @media (max-width: 900px) {
+      width: 11px;
+      left: 80%;
+      bottom: 20%;
+    }
+  }
+  .star-grey {
+    position: fixed;
+    width: 16px;
+    right: 25%;
+    top: 20%;
+
+    @media (max-width: 900px) {
+      right: 80%;
+      top: 40%;
+    }
+  }
+  .star-grey-2 {
+    position: fixed;
+    width: 16px;
+    left: 10%;
+    bottom: 12%;
+
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  .star-white {
+    position: fixed;
+    width: 12px;
+    right: 15%;
+    bottom: 5%;
+
+    @media (max-width: 900px) {
       display: none;
     }
   }

@@ -9,10 +9,10 @@ import NavbarMobile from './NavbarMobile';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
-  
+
   const toggleNav = () => {
     setOpenNav(!openNav);
-  }
+  };
 
   return (
     <Wrapper>
@@ -54,7 +54,12 @@ const Navbar = () => {
       </div>
 
       <div className="nav-mob-con">
-        <NavbarMobile open={openNav} close={() => {setOpenNav(false)}}/>
+        <NavbarMobile
+          open={openNav}
+          close={() => {
+            setOpenNav(false);
+          }}
+        />
       </div>
     </Wrapper>
   );
@@ -89,6 +94,10 @@ const Wrapper = styled.nav`
 
       @media (max-width: 1200px) {
         padding-left: 20px;
+      }
+
+      @media (max-width: 375px) {
+        padding-left: 0;
       }
     }
   }

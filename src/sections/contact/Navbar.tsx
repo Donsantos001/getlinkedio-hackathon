@@ -27,7 +27,7 @@ const Navbar = () => {
             <a href={'/#faqs'} className="navbar-item">
               FAQs
             </a>
-            <Link to={'/contact'} className="navbar-item">
+            <Link to={'/contact'} className="navbar-item" id='ct'>
               Contact
             </Link>
           </div>

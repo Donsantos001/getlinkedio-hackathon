@@ -11,8 +11,8 @@ const Timeline = () => {
     <Wrapper id="timeline">
       <div className="timeline">
         <div className="timeline-head">
-          <h2 className="timeline-title">Timeline</h2>
-          <p className="timeline-text">
+          <h2 className="timeline-title" data-aos="zoom-out">Timeline</h2>
+          <p className="timeline-text" data-aos="zoom-out">
             Here is the breakdown of the time we anticipate using for the upcoming event.
           </p>
         </div>

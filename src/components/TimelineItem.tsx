@@ -18,7 +18,7 @@ const TimelineItem = ({
   return (
     <Container invert={invert} first={id === 1}>
       <div className="tl">
-        <div className="tl-main">
+        <div className="tl-main" data-aos={id % 2 == 1 ? 'flip-left' : 'flip-right'}>
           <div className="flow">
             <TimelinePoint number={id} />
           </div>

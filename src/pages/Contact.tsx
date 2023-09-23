@@ -8,6 +8,9 @@ import GradButton from 'components/GradButton';
 import NavBack from 'components/NavBack';
 import { apiMutate } from 'utils/query';
 import { useMutation } from 'react-query';
+import StarLight from '../assets/rules-star-puple.svg';
+import StarWhite from '../assets/rules-star-white.svg';
+import StarPurple from '../assets/intro-star-medium.svg';
 
 type FormDataType = {
   email: string;
@@ -159,6 +162,19 @@ const Contact = () => {
       <div className="lighting-right">
         <img src={RulesRight} alt="" />
       </div>
+
+      <div className="star-purple">
+        <img src={StarPurple} alt="" />
+      </div>
+      <div className="star-purple-2">
+        <img src={StarPurple} alt="" />
+      </div>
+      <div className="star-grey">
+        <img src={StarLight} alt="" />
+      </div>
+      <div className="star-white">
+        <img src={StarWhite} alt="" />
+      </div>
     </Wrapper>
   );
 };
@@ -177,6 +193,8 @@ const Wrapper = styled.div`
     }
 
     .nsm {
+      position: relative;
+      z-index: 22;
       padding: 60px 40px 0 40px;
     }
   }
@@ -360,6 +378,56 @@ const Wrapper = styled.div`
 
     @media (max-width: 768px) {
       display: none;
+    }
+  }
+
+  .star-purple {
+    position: fixed;
+    width: 16px;
+    left: 16%;
+    top: 25%;
+
+    @media (max-width: 900px) {
+      width: 12px;
+      top: 10%;
+      left: 50%;
+    }
+  }
+  .star-purple-2 {
+    position: fixed;
+    width: 16px;
+    left: 45%;
+    bottom: 20%;
+
+    @media (max-width: 900px) {
+      width: 11px;
+      left: 10%;
+      bottom: 20%;
+    }
+  }
+  .star-grey {
+    position: fixed;
+    width: 16px;
+    right: 20%;
+    top: 17%;
+
+    @media (max-width: 900px) {
+      width: 12px;
+      right: 15%;
+      top: 20%;
+    }
+  }
+
+  .star-white {
+    position: fixed;
+    width: 12px;
+    right: 10%;
+    bottom: 15%;
+
+    @media (max-width: 900px) {
+      width: 12px;
+      right: 6%;
+      bottom: 20%;
     }
   }
 `;

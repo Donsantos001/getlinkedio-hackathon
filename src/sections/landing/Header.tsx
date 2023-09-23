@@ -66,7 +66,7 @@ const Header = () => {
           </div>
 
           <div className="header-button">
-            <Link to="/">
+            <Link to="/register">
               <GradButton label="Register" />
             </Link>
           </div>
@@ -261,6 +261,7 @@ const Wrapper = styled.div`
 
           @media (max-width: 768px) {
             justify-content: center;
+            flex-wrap: no-wrap;
           }
 
           h2 {

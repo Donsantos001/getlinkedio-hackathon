@@ -92,7 +92,7 @@ const Footer = () => {
         <p>All rights reserved. © getlinked Ltd.</p>
       </div>
 
-      <div className="star-purple" data-aos="zoom-in">
+      <div className="star-purple">
         <img src={StarPurple} alt="" />
       </div>
     </Wrapper>
