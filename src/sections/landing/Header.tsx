@@ -120,6 +120,9 @@ const Wrapper = styled.div`
         margin-right: auto;
         justify-content: center;
       }
+      @media (max-width: 375px) {
+        font-size: 13px;
+      }
 
       & > h3 {
         padding-right: 6px;
@@ -136,6 +139,10 @@ const Wrapper = styled.div`
 
           @media (max-width: 600px) {
             top: calc(100% - 8px);
+          }
+
+          @media (max-width: 375px) {
+            top: calc(100% - 5px);
           }
 
           img {
@@ -268,12 +275,18 @@ const Wrapper = styled.div`
             @media (max-width: 768px) {
               height: 48px;
             }
+            @media (max-width: 425px) {
+              height: 40px;
+            }
           }
 
           .explode {
             height: 54px;
             @media (max-width: 768px) {
               height: 28px;
+            }
+            @media (max-width: 425px) {
+              height: 24px;
             }
           }
         }
@@ -293,6 +306,9 @@ const Wrapper = styled.div`
         }
         @media (max-width: 768px) {
           font-size: 16px;
+        }
+        @media (max-width: 425px) {
+          font-size: 14px;
         }
       }
 
