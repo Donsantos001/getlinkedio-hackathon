@@ -35,3 +35,53 @@ a {
   text-decoration: none;
   color: var(--default-textColor);
 }
+
+
+
+
+.pulse-out-fade {
+  animation: pulse-out-fade 3s infinite;
+}
+.rotate {
+  animation: rotate 60s infinite linear;
+}
+
+.d-0 {
+  animation-delay: 0s;
+}
+.d-0-5 {
+  animation-delay: 0.5s;
+}
+.d-1 {
+  animation-delay: 1s;
+}
+.d-1-5 {
+  animation-delay: 1.5s;
+}
+
+@keyframes pulse-out-fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  } 
+  25% {
+    transform: rotate(0deg);
+  } 
+  100% {
+    transform: rotate(360deg);
+  }
+}

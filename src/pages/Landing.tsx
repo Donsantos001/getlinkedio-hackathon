@@ -38,13 +38,13 @@ const Landing = () => {
         <div className="metrix">
           <img src={Metrix} alt="" />
         </div>
-        <div className="star" data-aos="zoom-in">
+        <div className="star pulse-out-fade">
           <img src={Star} alt="" />
         </div>
-        <div className="star-light sl1" data-aos="zoom-in">
+        <div className="star-light sl1 pulse-out-fade d-0-5">
           <img src={StarLight} alt="" />
         </div>
-        <div className="star-light sl2" data-aos="zoom-in">
+        <div className="star-light sl2 pulse-out-fade d-1-5">
           <img src={StarLight} alt="" />
         </div>
 

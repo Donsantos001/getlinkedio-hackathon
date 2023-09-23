@@ -105,6 +105,7 @@ const Contact = () => {
 
                 <div className="input-con ic-lg">
                   <input
+                    required
                     value={formData.first_name}
                     onChange={handleChange}
                     type="text"
@@ -122,6 +123,7 @@ const Contact = () => {
 
                 <div className="input-con">
                   <input
+                    required
                     value={formData.email}
                     onChange={handleChange}
                     type="email"
@@ -131,6 +133,7 @@ const Contact = () => {
                 </div>
                 <div className="input-con">
                   <textarea
+                    required
                     value={formData.message}
                     onChange={handleChange}
                     name="message"
@@ -200,6 +203,8 @@ const Wrapper = styled.div`
   }
   .contact {
     padding: 80px 120px;
+    position: relative;
+    z-index: 22;
 
     @media (max-width: 1024px) {
       padding: 80px 60px;

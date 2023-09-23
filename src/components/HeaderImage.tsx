@@ -10,7 +10,7 @@ const HeaderImage = () => {
         <img src={Man} alt="" />
       </div>
       <div className="world">
-        <img src={World} alt="" />
+        <img src={World} alt="" className="rotate" />
       </div>
     </Container>
   );

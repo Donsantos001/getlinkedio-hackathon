@@ -96,6 +96,7 @@ const Register = () => {
                     <label htmlFor="">Team's Name</label>
                     <div className="input-con">
                       <input
+                        required
                         value={formData.team_name}
                         onChange={handleChange}
                         name="team_name"
@@ -108,6 +109,7 @@ const Register = () => {
                     <label htmlFor="">Phone</label>
                     <div className="input-con">
                       <input
+                        required
                         value={formData.phone_number}
                         onChange={handleChange}
                         name="phone_number"
@@ -123,6 +125,7 @@ const Register = () => {
                     <label htmlFor="">Email</label>
                     <div className="input-con">
                       <input
+                        required
                         value={formData.email}
                         onChange={handleChange}
                         name="email"
@@ -135,6 +138,7 @@ const Register = () => {
                     <label htmlFor="">Project Topic</label>
                     <div className="input-con">
                       <input
+                        required
                         value={formData.project_topic}
                         onChange={handleChange}
                         name="project_topic"
@@ -179,6 +183,7 @@ const Register = () => {
 
                 <div className="agree">
                   <input
+                    required
                     checked={formData.privacy_poclicy_accepted}
                     onChange={handleChange}
                     type="checkbox"
@@ -276,6 +281,8 @@ const Wrapper = styled.div`
   }
 
   .register {
+    position: relative;
+    z-index: 22;
     padding: 30px 60px 40px 60px;
 
     @media (max-width: 1024px) {

@@ -284,7 +284,7 @@ const Wrapper = styled.div`
               height: 48px;
             }
             @media (max-width: 425px) {
-              height: 40px;
+              height: 36px;
             }
           }
 
