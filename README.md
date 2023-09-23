@@ -1,6 +1,6 @@
 # GetLinked - Online Hackathon Onboarding UI
 
-![GetLinked Logo](/src/assets/getlinkedlogo.png.png)
+![GetLinked Logo](/src/assets/getlinkedlogo.png)
 
 GetLinked is an onboarding user interface for participants in online hackathons or coding challenges. It provides an interactive and informative platform to engage users and guide them through the process of joining the event.
 
