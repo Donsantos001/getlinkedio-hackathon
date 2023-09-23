@@ -43,7 +43,7 @@ a {
   animation: pulse-out-fade 3s infinite;
 }
 .rotate {
-  animation: rotate 60s infinite linear;
+  animation: rotate 75s infinite linear;
 }
 
 .d-0 {
