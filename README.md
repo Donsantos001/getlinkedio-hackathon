@@ -17,7 +17,7 @@ GetLinked is an onboarding user interface for participants in online hackathons 
 
 ## Demo
 
-[Link to Live Demo](https://get-hack.vercel.app)
+[Link to Live Demo](https://gethack.vercel.app)
 
 ## Technologies Used
 
