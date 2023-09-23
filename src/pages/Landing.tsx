@@ -8,14 +8,6 @@ import PurpleLens2 from '../assets/header-purple-lens-right.svg';
 import RulesLeft from '../assets/rules-pp-left.svg';
 import RulesRight from '../assets/rules-pp-left.svg';
 
-import RewardsLeft from '../assets/rewards-pp-left.svg';
-import RewardsRight from '../assets/judge-pp-right.svg';
-
-import SponsorsLeft from '../assets/rules-pp-left.svg';
-import SponsorsRight from '../assets/rules-pp-right.svg';
-import PolicyLeft from '../assets/rules-pp-left.svg';
-import PolicyRight from '../assets/rules-pp-right.svg';
-
 import Metrix from '../assets/header-metrix.svg';
 import Star from '../assets/star.svg';
 import StarLight from '../assets/header-star-light.svg';

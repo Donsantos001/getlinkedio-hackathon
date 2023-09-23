@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# GetLinked - Online Hackathon Onboarding UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GetLinked Logo](/path-to-your-logo.png)
 
-## Available Scripts
+GetLinked is an onboarding user interface for participants in online hackathons or coding challenges. It provides an interactive and informative platform to engage users and guide them through the process of joining the event.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Demo](#demo)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Link to Live Demo](https://your-live-demo-url.com)
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- TypeScript
+- styled-components
+- Axios
+- react-query
+- react-router-dom
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The project is organized into several components and pages:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Landing Page**: The main entry point for users.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - Navbar
+  - Header
+  - Introduction
+  - Rules and Guidelines
+  - Judging Criteria
+  - FAQs
+  - Timeline
+  - Prizes and Rewards
+  - Partners and Sponsors
+  - Privacy Policy and Terms
+  - Footer
+  - Navigation links to Overview, Timeline, FAQs, Contact, and Register.
 
-### `npm run eject`
+- **Contact Page**: Allows users to send messages to the site owner via a form.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Register Page**: Provides a signup form for participants, with a successful modal popup upon successful registration.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+   git clone https://github.com/your-username/getlinked.git
+   cd getlinked
+   ```
 
-## Learn More
+2. Install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   npm install
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Start the development server:
 
-### Code Splitting
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The application should now be running locally at `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+You can use GetLinked as a foundation for creating onboarding experiences for your online hackathons or coding challenges. Customize the content, styling, and functionality to suit your event's specific needs.
 
-### Making a Progressive Web App
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Screenshot 1](/screenshots/screenshot-1.png)
 
-### Advanced Configuration
+![Screenshot 2](/screenshots/screenshot-2.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository.
 
-### `npm run build` fails to minify
+2. Create a new branch: `git checkout -b feature/new-feature`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Make your changes and commit them: `git commit -m 'Add new feature'`.
+
+4. Push to the branch: `git push origin feature/new-feature`.
+
+5. Submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
