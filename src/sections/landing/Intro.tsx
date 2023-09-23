@@ -10,7 +10,7 @@ const Intro = () => {
     <Wrapper id="overview">
       <div className="intro">
         <div className="intro-image">
-          <div className="star-small" data-aos="zoom-in-up">
+          <div className="star-small" data-aos="zoom-in">
             <img src={StarSmall} alt="" />
           </div>
           <div className="arrow">
@@ -28,7 +28,7 @@ const Intro = () => {
               <h2 className="itt1">Introduction to getlinked</h2>
               <h2 className="itt2">techHackathon 1.0</h2>
             </div>
-            <div className="star-medium"  data-aos="zoom-in-up">
+            <div className="star-medium"  data-aos="zoom-in">
               <img src={StarMedium} alt="" />
             </div>
           </div>

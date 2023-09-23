@@ -10,7 +10,7 @@ const Judge = () => {
     <Wrapper>
       <div className="judge">
         <div className="judge-image">
-          <div className="star-small" data-aos="zoom-in-up">
+          <div className="star-small" data-aos="zoom-in">
             <img src={StarSmall} alt="" />
           </div>
           <div className="arrow">{/* <img src={Arrow} alt="" /> */}</div>
@@ -71,7 +71,7 @@ const Judge = () => {
             <GradButton label="Read More" />
           </div>
 
-          <div className="star-medium" data-aos="zoom-in-up">
+          <div className="star-medium" data-aos="zoom-in">
             <img src={StarMedium} alt="" />
           </div>
         </div>

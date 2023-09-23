@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import SponsorsImage from '../../assets/sponsors-image.svg';
+import StarWhite from '../../assets/rules-star-white.svg';
+import StarPurple from '../../assets/intro-star-medium.svg';
 
 const Sponsors = () => {
   return (
@@ -17,6 +19,18 @@ const Sponsors = () => {
         <div className="sponsors-image">
           <div className="img-con">
             <img src={SponsorsImage} alt="" />
+          </div>
+
+          <div className="star-small" data-aos="zoom-in">
+            <img src={StarPurple} alt="" />
+          </div>
+
+          <div className="star-medium" data-aos="zoom-in">
+            <img src={StarPurple} alt="" />
+          </div>
+
+          <div className="star-light" data-aos="zoom-in">
+            <img src={StarWhite} alt="" />
           </div>
         </div>
       </div>
@@ -56,15 +70,52 @@ const Wrapper = styled.div`
   .sponsors-image {
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
     @media (max-width: 768px) {
       margin-bottom: 20px;
     }
 
-    .img-con {
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    & > div > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .star-small {
+      position: absolute;
+      left: 9%;
+      top: -20px;
+      width: 16px;
+
+      @media (max-width: 768px) {
+        width: 11px;
+        left: 9%;
+        top: 0;
+      }
+    }
+
+    .star-medium {
+      position: absolute;
+      right: 45%;
+      top: 20%;
+      width: 16px;
+
+      @media (max-width: 768px) {
+        width: 11px;
+        right: 45%;
+        top: 35%;
+      }
+    }
+    .star-light {
+      position: absolute;
+      right: 45%;
+      bottom: 15%;
+      width: 18px;
+
+      @media (max-width: 7680px) {
+        right: 15%;
+        bottom: 3%;
+        width: 12px;
       }
     }
   }

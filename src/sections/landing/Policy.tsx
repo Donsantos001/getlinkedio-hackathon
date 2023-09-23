@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import StarPurple from '../../assets/rules-star-puple.svg';
+import StarLight from '../../assets/rules-star-puple.svg';
 import StarWhite from '../../assets/rules-star-white.svg';
+import StarPurple from '../../assets/intro-star-medium.svg';
+
 import Check from '../../assets/policy-checked.svg';
 import GradButton from 'components/GradButton';
 import PolicyImage from 'components/PolicyImage';
@@ -16,8 +18,8 @@ const Policy = () => {
               <h2 className="ptt1">Privacy Policy and</h2>
               <h2 className="ptt2">Terms</h2>
             </div>
-            <div className="star-medium">
-              <img src={StarWhite} alt="" />
+            <div className="star-light" data-aos="zoom-in">
+              <img src={StarLight} alt="" />
             </div>
           </div>
 
@@ -75,11 +77,21 @@ const Policy = () => {
                 <GradButton label="Read More" />
               </div>
             </div>
+
+            <div className="star-one" data-aos="zoom-in">
+              <img src={StarPurple} alt="" />
+            </div>
+            <div className="star-two" data-aos="zoom-in">
+              <img src={StarPurple} alt="" />
+            </div>
           </div>
         </div>
 
         <div className="policy-image">
-          <div className="star-small">
+          <div className="star-white">
+            <img src={StarWhite} alt="" />
+          </div>
+          <div className="star-purple">
             <img src={StarPurple} alt="" />
           </div>
 
@@ -145,33 +157,36 @@ const Wrapper = styled.div`
         }
       }
 
-      .star-small {
-        position: absolute;
-        right: calc(100% + 20px);
-        top: 35%;
-        width: 20px;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-
-        @media (max-width: 900px){
-          width: 15px;
-          top: 30%;
-          right: 90%;
-        }
+      & > div > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
-      
+      .star-white {
+        position: absolute;
+        right: 22%;
+        top: 18%;
+        width: 12px;
+      }
+
+      .star-purple {
+        position: absolute;
+        left: 37%;
+        bottom: 31%;
+        width: 12px;
+
+        @media (max-width: 900px) {
+          display: none;
+        }
+      }
     }
 
     .policy-content {
       max-width: 530px;
       color: ${({ theme }) => theme.text};
 
-      @media (max-width: 900px){
+      @media (max-width: 900px) {
         text-align: center;
       }
 
@@ -181,10 +196,10 @@ const Wrapper = styled.div`
         justify-content: start;
         align-items: center;
 
-        @media (max-width: 900px){
-            padding-left: 15px;
-            justify-content: center;
-          }
+        @media (max-width: 900px) {
+          padding-left: 15px;
+          justify-content: center;
+        }
 
         .policy-title-text {
           font-family: 'Clash Display';
@@ -203,10 +218,16 @@ const Wrapper = styled.div`
           }
         }
 
-        .star-medium {
-          @media (max-width: 900px){
-            position-absolute;
-            width: 15px;
+        .star-light {
+          position: absolute;
+          width: 16px;
+          right: 40px;
+          top: -6px;
+
+          @media (max-width: 900px) {
+            width: 13px;
+            top: -15px;
+            right: 20%;
           }
 
           img {
@@ -217,86 +238,124 @@ const Wrapper = styled.div`
         }
 
         .ph {
-            display: none;
+          display: none;
 
-            @media(max-width: 900px){
-                display: block;
-            }
+          @media (max-width: 900px) {
+            display: block;
+          }
         }
       }
 
-      .policy-update, .policy-text {
+      .policy-update,
+      .policy-text {
         font-size: 14px;
         margin-bottom: 20px;
 
         @media (max-width: 768px) {
-            font-size: 13px;
-          }
+          font-size: 13px;
+        }
       }
 
       .policy-box-con {
-        background-color: rgba(217,217,217,0.03);
+        position: relative;
+        background-color: rgba(217, 217, 217, 0.03);
         border: 1px solid ${({ theme }) => theme.primary};
         border-radius: 4px;
 
         .policy-box {
-            padding: 40px 30px 40px 40px;
-            font-size: 14px;
-    
-            @media (max-width: 768px) {
-                padding: 30px 15px 30px 15px;
-                font-size: 13px;
-              }
-    
-              .overview {
-                margin-bottom: 20px;
-              }
+          padding: 40px 30px 40px 40px;
+          font-size: 14px;
 
-              .license {
-                text-align: left;
-                margin-bottom: 20px;
-
-                & > h3 {
-                    color: ${({ theme }) => theme.primary};
-                    font-size: 16px;
-    
-                    @media (max-width: 768px) {
-                        font-size: 14px;
-                      } 
-                }              
-              }
-
-              .policy-items {
-                text-align: left;
-                margin-bottom: 20px;
-
-                  .policy-item {
-                      display: flex;
-
-                      .check {
-                        padding-top: 5px;
-                        display: flex;
-                        align-items: flex-start;
-
-                        img {
-                            width: 14px;
-                            height: 14px;
-                            object-fit: contain;
-                          }
-                      }
-
-                      .text{
-                          padding-left: 10px
-                      }
-                  }
-              }  
-
-              .read-more {
-                display: flex;
-                justify-content: center;
-                padding-bottom: 20px;
-              }
+          @media (max-width: 768px) {
+            padding: 30px 15px 30px 15px;
+            font-size: 13px;
           }
+
+          .overview {
+            margin-bottom: 20px;
+          }
+
+          .license {
+            text-align: left;
+            margin-bottom: 20px;
+
+            & > h3 {
+              color: ${({ theme }) => theme.primary};
+              font-size: 16px;
+
+              @media (max-width: 768px) {
+                font-size: 14px;
+              }
+            }
+          }
+
+          .policy-items {
+            text-align: left;
+            margin-bottom: 20px;
+
+            .policy-item {
+              display: flex;
+
+              .check {
+                padding-top: 5px;
+                display: flex;
+                align-items: flex-start;
+
+                img {
+                  width: 14px;
+                  height: 14px;
+                  object-fit: contain;
+                }
+              }
+
+              .text {
+                padding-left: 10px;
+              }
+            }
+          }
+
+          .read-more {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 20px;
+          }
+        }
+
+        .star-one {
+          position: absolute;
+          width: 13px;
+          display: none;
+
+          @media (max-width: 900px) {
+            display: block;
+            right: 0;
+            top: -10%;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .star-two {
+          position: absolute;
+          width: 15px;
+          left: -10%;
+          bottom: 30%;
+
+          @media (max-width: 900px) {
+            width: 11px;
+            left: -6%;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
       }
     }
   }

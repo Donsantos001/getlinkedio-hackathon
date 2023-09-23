@@ -2,6 +2,9 @@ import TimelineItem from 'components/TimelineItem';
 import { timeline } from 'data/landing';
 import React from 'react';
 import styled from 'styled-components';
+import StarWhite from '../../assets/rules-star-white.svg';
+import StarPurple from '../../assets/intro-star-medium.svg';
+import StarLight from '../../assets/rules-star-puple.svg';
 
 const Timeline = () => {
   return (
@@ -19,6 +22,18 @@ const Timeline = () => {
             {timeline.map((item, index) => (
               <TimelineItem key={index} id={index + 1} invert={index % 2 !== 0} {...item} />
             ))}
+          </div>
+
+          <div className="star-small" data-aos="zoom-in">
+            <img src={StarPurple} alt="" />
+          </div>
+
+          <div className="star-medium" data-aos="zoom-in">
+            <img src={StarWhite} alt="" />
+          </div>
+
+          <div className="star-light" data-aos="zoom-in">
+            <img src={StarLight} alt="" />
           </div>
         </div>
       </div>
@@ -56,6 +71,54 @@ const Wrapper = styled.div`
       font-size: 14px;
       @media (max-width: 768px) {
         font-size: 13px;
+      }
+    }
+  }
+
+  .timeline-main {
+    position: relative;
+
+    & > div > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .star-small {
+      position: absolute;
+      left: 20%;
+      top: 0;
+      width: 18px;
+
+      @media (max-width: 900px) {
+        width: 15px;
+        left: 20%;
+        top: -20px;
+      }
+    }
+
+    .star-medium {
+      position: absolute;
+      right: 20%;
+      top: 45%;
+      width: 18px;
+
+      @media (max-width: 900px) {
+        width: 15px;
+        right: 20%;
+        top: 45%;
+      }
+    }
+    .star-light {
+      position: absolute;
+      left: 8%;
+      bottom: 20px;
+      width: 16px;
+
+      @media (max-width: 900px) {
+        width: 12px;
+        left: -5px;
+        bottom: -6px;
       }
     }
   }

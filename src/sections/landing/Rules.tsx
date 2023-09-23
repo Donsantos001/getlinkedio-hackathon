@@ -15,7 +15,7 @@ const Rules = () => {
               <h2 className="rtt1">Rules and</h2>
               <h2 className="rtt2">Guidelines</h2>
             </div>
-            <div className="star-medium" data-aos="zoom-in-up">
+            <div className="star-medium" data-aos="zoom-in">
               <img src={StarPurple} alt="" />
             </div>
           </div>
@@ -32,7 +32,7 @@ const Rules = () => {
         </div>
 
         <div className="rules-image">
-          <div className="star-small" data-aos="zoom-in-up">
+          <div className="star-small" data-aos="zoom-in">
             <img src={StarWhite} alt="" />
           </div>
 
