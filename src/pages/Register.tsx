@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from 'sections/register/Navbar';
 import styled from 'styled-components';
 import RegisterImage from '../assets/register-image.svg';
+import RulesLeft from '../assets/rules-pp-left.svg';
+import RulesRight from '../assets/rules-pp-left.svg';
 import Movement from 'components/Movement';
 import GradButton from 'components/GradButton';
 import SuccessModal from 'sections/register/SuccessModal';
@@ -202,6 +204,12 @@ const Register = () => {
           }}
         />
       )}
+      <div className="lighting-left">
+        <img src={RulesLeft} alt="" />
+      </div>
+      <div className="lighting-right">
+        <img src={RulesRight} alt="" />
+      </div>
     </Wrapper>
   );
 };
@@ -415,6 +423,38 @@ const Wrapper = styled.div`
           }
         }
       }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .lighting-left {
+    width: 70%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-30%, -10%);
+    opacity: 0.68;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      transform: translate(-30%, 5%);
+    }
+  }
+  .lighting-right {
+    width: 70%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 40%);
+    opacity: 0.68;
+
+    @media (max-width: 768px) {
+      display: none;
     }
   }
 `;
