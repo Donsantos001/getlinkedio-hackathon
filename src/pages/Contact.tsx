@@ -1,11 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from 'sections/contact/Navbar';
 import styled from 'styled-components';
 import Socials from '../assets/footer-social.svg';
 import GradButton from 'components/GradButton';
 import NavBack from 'components/NavBack';
+import { apiMutate } from 'utils/query';
+import { useMutation } from 'react-query';
+
+type FormDataType = {
+  email: string;
+  phone_number: string;
+  first_name: string;
+  message: string;
+};
 
 const Contact = () => {
+  const [formData, setFormData] = useState<FormDataType>({
+    email: '',
+    phone_number: '02132323455',
+    first_name: '',
+    message: '',
+  });
+
+  const handleChange = (e: any) => {
+    console.log({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value,
+    });
+  };
+
+  const { isLoading, mutate: contact } = useMutation(
+    (data: FormDataType) => {
+      return apiMutate('hackathon/contact-form', data);
+    },
+    {
+      onSuccess: (data: any) => {
+        console.log(data);
+      },
+    }
+  );
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    contact(formData);
+  };
+
   return (
     <Wrapper>
       <div className="navbar">
@@ -51,7 +91,7 @@ const Contact = () => {
           </div>
 
           <div className="contact-form">
-            <form action="">
+            <form action="" onSubmit={handleSubmit}>
               <div className="inner">
                 <div className="form-head">
                   <h3>Questions or need assistance?</h3>
@@ -61,25 +101,44 @@ const Contact = () => {
                 <div className="form-sub-head">Email us below to any question related to our event</div>
 
                 <div className="input-con ic-lg">
-                  <input type="text" name="firstname" placeholder="First Name" />
+                  <input
+                    value={formData.first_name}
+                    onChange={handleChange}
+                    type="text"
+                    name="first_name"
+                    placeholder="First Name"
+                  />
                 </div>
 
                 <div className="input-con ic-sm">
-                  <input type="text" name="team" placeholder="Team's Name" />
+                  <input type="text" name="team_name" placeholder="Team's Name" />
                 </div>
                 <div className="input-con ic-sm">
                   <input type="text" name="topic" placeholder="Topic" />
                 </div>
 
                 <div className="input-con">
-                  <input type="email" name="mail" placeholder="Mail" />
+                  <input
+                    value={formData.email}
+                    onChange={handleChange}
+                    type="email"
+                    name="email"
+                    placeholder="Mail"
+                  />
                 </div>
                 <div className="input-con">
-                  <textarea name="message" cols={30} rows={5} placeholder="Message"></textarea>
+                  <textarea
+                    value={formData.message}
+                    onChange={handleChange}
+                    name="message"
+                    cols={30}
+                    rows={5}
+                    placeholder="Message"
+                  ></textarea>
                 </div>
 
                 <div className="submit-button">
-                  <GradButton submit label="Submit" action={() => null} />
+                  <GradButton submit label={isLoading ? 'Submiting' : 'Submit'} />
                 </div>
 
                 <div className="share-sm">

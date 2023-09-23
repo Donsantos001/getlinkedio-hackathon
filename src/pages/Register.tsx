@@ -5,14 +5,59 @@ import RegisterImage from '../assets/register-image.svg';
 import Movement from 'components/Movement';
 import GradButton from 'components/GradButton';
 import SuccessModal from 'sections/register/SuccessModal';
+import { useMutation, useQuery } from 'react-query';
+import { apiMutate } from 'utils/query';
+
+type FormDataType = {
+  email: string;
+  phone_number: string;
+  team_name: string;
+  group_size: number | string;
+  project_topic: string;
+  category: number | string;
+  privacy_poclicy_accepted: boolean;
+};
 
 const Register = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [formData, setFormData] = useState<FormDataType>({
+    email: '',
+    phone_number: '',
+    team_name: '',
+    group_size: 0,
+    project_topic: '',
+    category: 0,
+    privacy_poclicy_accepted: false,
+  });
+
+  const { data } = useQuery<{ id: number; name: string }[]>('hackathon/categories-list');
+
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value,
+    });
+  };
+
+  const { isLoading, mutate: register } = useMutation(
+    (data: FormDataType) => {
+      return apiMutate('hackathon/registration', data);
+    },
+    {
+      onSuccess: (data: any) => {
+        console.log(data);
+        setModalOpen(true);
+      },
+    }
+  );
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    //after sumbit
-    setModalOpen(true);
+    register({
+      ...formData,
+      category: formData.category as number,
+      group_size: formData.group_size as number,
+    });
   };
 
   return (
@@ -46,13 +91,25 @@ const Register = () => {
                   <div className="field">
                     <label htmlFor="">Team's Name</label>
                     <div className="input-con">
-                      <input type="text" placeholder="Enter the name of your group" />
+                      <input
+                        value={formData.team_name}
+                        onChange={handleChange}
+                        name="team_name"
+                        type="text"
+                        placeholder="Enter the name of your group"
+                      />
                     </div>
                   </div>
                   <div className="field">
                     <label htmlFor="">Phone</label>
                     <div className="input-con">
-                      <input type="text" placeholder="Enter your phone number" />
+                      <input
+                        value={formData.phone_number}
+                        onChange={handleChange}
+                        name="phone_number"
+                        type="text"
+                        placeholder="Enter your phone number"
+                      />
                     </div>
                   </div>
                 </div>
@@ -61,13 +118,25 @@ const Register = () => {
                   <div className="field">
                     <label htmlFor="">Email</label>
                     <div className="input-con">
-                      <input type="text" placeholder="Enter your email address" />
+                      <input
+                        value={formData.email}
+                        onChange={handleChange}
+                        name="email"
+                        type="email"
+                        placeholder="Enter your email address"
+                      />
                     </div>
                   </div>
                   <div className="field">
                     <label htmlFor="">Project Topic</label>
                     <div className="input-con">
-                      <input type="text" placeholder="What is your group project topic" />
+                      <input
+                        value={formData.project_topic}
+                        onChange={handleChange}
+                        name="project_topic"
+                        type="text"
+                        placeholder="What is your group project topic"
+                      />
                     </div>
                   </div>
                 </div>
@@ -76,20 +145,25 @@ const Register = () => {
                   <div className="field">
                     <label htmlFor="">Category</label>
                     <div className="input-con">
-                      <select name="category" id="cat">
-                        <option value="">Select your category</option>
-                        <option value="">Category 1</option>
-                        <option value="">Category 2</option>
+                      <select value={formData.category} onChange={handleChange} name="category" id="cat">
+                        <option value="0">Select your category</option>
+                        {data?.map((item, index) => (
+                          <option key={index} value={`${item.id}`}>
+                            {item.name}
+                          </option>
+                        ))}
                       </select>
                     </div>
                   </div>
                   <div className="field">
                     <label htmlFor="">Group Size</label>
                     <div className="input-con">
-                      <select name="size" id="size">
-                        <option value="">Select</option>
-                        <option value="">Group Size 1</option>
-                        <option value="">Group Size 2</option>
+                      <select value={formData.group_size} onChange={handleChange} name="group_size" id="size">
+                        <option value="0">Select</option>
+                        <option value="1"> 1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                       </select>
                     </div>
                   </div>
@@ -100,14 +174,20 @@ const Register = () => {
                 </p>
 
                 <div className="agree">
-                  <input type="checkbox" name="agree" id="agree" />
+                  <input
+                    checked={formData.privacy_poclicy_accepted}
+                    onChange={handleChange}
+                    type="checkbox"
+                    name="privacy_poclicy_accepted"
+                    id="agree"
+                  />
                   <div className="txt">
                     <span>I agree with the event terms and conditions and privacy policy</span>
                   </div>
                 </div>
 
                 <div className="submit-button">
-                  <GradButton full submit label="Submit" />
+                  <GradButton full submit label={isLoading ? 'Submiting' : 'Submit'} />
                 </div>
               </div>
             </form>
@@ -296,6 +376,11 @@ const Wrapper = styled.div`
                   font-family: 'Montserrat';
                   &::placeholder {
                     color: ${({ theme }) => theme.text};
+                  }
+
+                  option {
+                    color: ${({ theme }) => theme.text};
+                    background-color: ${({ theme }) => theme.background};
                   }
                 }
               }
